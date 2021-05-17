@@ -1,0 +1,54 @@
+/* pages/address/address.wxss */
+page{
+  background:rgb(243,244,245);
+}
+.header-top{
+  width: 100%;
+  padding: 40rpx 0;
+  position: relative;
+  background: white;
+}
+.back{
+  position: relative;
+  top: 55rpx;
+  border-radius: 50%;
+  left: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: white;
+}
+.header-text{
+  text-align: center;
+  position: relative;
+  top: 5px;
+}
+.addres-info{
+  width: 90%;
+  margin: auto;
+  border-radius:5%;
+  margin-top:50rpx;
+  background:rgb(255,255,255);
+}
+.info-info{
+  width: 90%;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.info-1{
+  display: flex;
+  border-bottom: 1px solid #999;
+  padding: 40rpx 0;
+}
+.info-1>input{
+  margin-left: 60rpx;
+}
+.info-2{
+  border-bottom: none;
+}
+.icad{
+  color: orangered;
+  font-weight: 700;
+}

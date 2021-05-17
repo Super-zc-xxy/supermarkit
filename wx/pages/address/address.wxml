@@ -1,0 +1,32 @@
+<!--pages/address/address.wxml-->
+<!-- 这是头部 -->
+<view class="header-top">
+  <view class="back" catchtap="back"><view class="iconfont icon-xiazai6" ></view></view>
+  <view class="header-text">新增收获地址</view>
+</view>
+<!-- 这是收集用户信息 -->
+<view class="addres-info">
+  <view class="info-info">
+    <view class="info-1">
+    <view>姓名</view>
+    <input type="text" placeholder="收货人姓名"/>
+    </view>
+    <view class="info-1">
+    <view>手机号</view>
+    <input type="text" placeholder="收件人手机号"/>
+    </view>
+    <view class="info-1" bindtap="onChangeAddress">
+    <view>所在地址</view>
+    <input type="text" placeholder="请输入所在地址" value="{{chooseAddress}}"/>
+    <view class="iconfont icon-zhizhen icad"></view>
+    </view>
+    <view class="info-1 info-2">
+    <view>详细地址</view>
+    <input type="text" placeholder="请输入详细地址"/>
+    </view>
+  </view>
+</view>
+<!-- 这是默认地址 -->
+<view class="addres-mrdz">
+  <radio catchtap="mrdz" aria-checked="{{mr}}"></radio>
+</view>

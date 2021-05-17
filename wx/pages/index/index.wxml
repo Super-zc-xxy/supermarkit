@@ -1,0 +1,67 @@
+<!--pages/index/index.wxml-->
+<!-- 这是头部 -->
+<view class="header">
+  <image src="/static/logo.jpg"></image>
+  <input type="text" placeholder-class="iconfont icon-sousuo" placeholder="搜索超市商品" />
+</view>
+<!-- 这是轮播 -->
+<view class="swiper">
+  <swiper autoplay="true" circular="true" duration="1000" interval="3000">
+    <swiper-item wx:for="{{swiperlist}}" wx:key="index">
+      <image src="{{item.swiper}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 这是商品保障 -->
+<view class="baozhang">
+  <text wx:for="{{baozhang}}" wx:key="index"><text class="iconfont {{item.img1}}"></text>{{item.p}}</text>
+</view>
+<!-- 这是商品分类 -->
+<view class="shop">
+  <view wx:for="{{shop}}" wx:key="index">
+    <text class="iconfont {{item.img1}} shopimg"></text>
+    <text>{{item.p}}</text>
+  </view>
+</view>
+<!-- 这是爆款 -->
+<view class="baokuan">
+  <view class="bk-mr"><text class="bk-title">爆款排行<text>超多人想要</text><text>更多爆款 ></text></text></view>
+  <view class="bk-shop">
+    <view wx:for="{{bk_shop}}" wx:key="index" catchtap="faddish" data-faddish="{{item.id}}">
+      <image src="{{item.img1}}"></image>
+      <view class="iconfont {{item.img2}} {{item.class}}"></view>
+      <view class="bk-text">{{item.p}}</view>
+      <view class="bk-text bk-text1">{{item.p1}}</view>
+      <view class="bk-text ">{{item.p2}}</view>
+    </view>
+  </view>
+</view>
+<!-- 这是新品 -->
+<view class="xinping">
+  <view class="xp-title">新品好物<view class="xp-title1">种草达人推荐</view>
+    <view class="xp-title2">更多新品 ></view>
+  </view>
+  <view class="xp-shop">
+    <view wx:for="{{xp_shop}}" wx:key="index">
+      <image src="{{item.img1}}"></image>
+      <view class="bk-text">{{item.p}}</view>
+      <view class="bk-text bk-text1">{{item.p1}}</view>
+      <view class="bk-text ">{{item.p2}}</view>
+    </view>
+  </view>
+
+</view>
+<!-- 这是简单展示分类 -->
+<view class="all">
+  <view class="all-title" wx:for="{{all}}" wx:key="index" catchtap="topbar" data-id="{{item.id}}">{{item.title}}
+    <view class="all-p">{{item.p}}</view>
+    <view wx:if="{{index == current}}" class="all-shop">
+      <view class="all-shop-main" wx:for="{{item.shop}}" wx:key="index" wx:for-item="items">
+        <image src="{{items.img1}}"></image>
+        <view class="all-shop-main-p">{{items.p}}</view>
+        <view class="all-shop-main-p1">{{items.p1}}</view>
+      </view>
+      <view class="all-shop-main-p2">----------没有更多了----------</view>
+    </view>
+  </view>
+</view>
