@@ -9,24 +9,31 @@
   <view class="info-info">
     <view class="info-1">
     <view>姓名</view>
-    <input type="text" placeholder="收货人姓名"/>
+    <input type="text" placeholder="收货人姓名" model:value="{{username}}" />
     </view>
     <view class="info-1">
     <view>手机号</view>
-    <input type="text" placeholder="收件人手机号"/>
+    <input type="text" placeholder="收件人手机号" model:value="{{phone}}"/>
     </view>
     <view class="info-1" bindtap="onChangeAddress">
     <view>所在地址</view>
-    <input type="text" placeholder="请输入所在地址" value="{{chooseAddress}}"/>
+    <input type="text" placeholder="请输入所在地址" model:value="{{chooseAddress}}"/>
     <view class="iconfont icon-zhizhen icad"></view>
     </view>
     <view class="info-1 info-2">
     <view>详细地址</view>
-    <input type="text" placeholder="请输入详细地址"/>
+    <textarea name="" id="" cols="60" rows="40" model:value="{{moreaddress}}"></textarea>
     </view>
   </view>
 </view>
 <!-- 这是默认地址 -->
 <view class="addres-mrdz">
-  <radio catchtap="mrdz" aria-checked="{{mr}}"></radio>
+    <text style="padding:40rpx;">默认地址：</text>
+    <switch class="tui-fr" checked="{{isChecked2}}" bindchange="changeSwitch2" model:value="{{addressstate}}"/>
+</view>
+<!-- 这是保存信息 -->
+<view class="addres-add">
+  <view class="addres-add-button" bindtap="add">
+    <view>保存并使用</view>
+  </view>
 </view>

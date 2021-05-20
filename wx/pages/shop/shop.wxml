@@ -11,8 +11,8 @@
 </view>
 <!-- 这是商品价格和介绍 -->
 <view class="shop-price">
-  <view class="shop-money"><text class="shop-sup">￥</text>{{shop.shopprice}}</view>
-  <view class="shop-produce">{{shop.shopname}}<text class="iconfont icon-fenxiang fenxiang"></text></view>
+  <view class="shop-money"><text class="shop-sup">￥</text>{{shop.price}}</view>
+  <view class="shop-produce">{{shop.title}}<text class="iconfont icon-fenxiang fenxiang"></text></view>
   <view class="shop-main" wx:for="{{shop.shopproduce}}" wx:key="index">
     <view class="iconfont {{item.img1}}"><text>{{item.p}}</text></view>
   </view>
@@ -24,7 +24,7 @@
 <!-- 这是用户购买 -->
 <view class="shop-user">
   <view class="user-main" catchtap="buy">
-    <text class="user-main-1">已选</text><text class="user-main-2">小米巨能写 黑色 10支装 <text class="user-main-3">x1</text><text class="user-main-4">></text></text>
+    <text class="user-main-1">已选</text><text class="user-main-2">{{shop.title}} <text class="user-main-3">x1</text><text class="user-main-4">></text></text>
   </view>
   <view class="user-main" catchtap="addres">
     <text class="user-main-1 ">送至</text><text class="iconfont icon-zhizhen user-main-2-1"></text><text style="margin-left:20rpx">成都市 高新区</text><text class="user-main-4">></text>
@@ -50,10 +50,10 @@
   <view class="shop-body-1">
     <view class="iconfont icon-quxiao shop-body-back" catchtap="body_back"></view>
     <view class="shop-body-1-1">
-      <image src="{{shop.shopinfo[0].shopimg}}"></image>
+      <image src="{{shop.img1}}"></image>
       <view class="shop-body-1-2">
-        <view class="shop-body-1-2-1">{{shop.shopinfo[0].shopprice}}</view>
-        <view class="shop-body-1-2-2">{{shop.shopinfo[0].shopname}}</view>
+        <view class="shop-body-1-2-1">￥{{shop.price}}</view>
+        <view class="shop-body-1-2-2">{{shop.title}}</view>
       </view>
     </view>
     <view class="shop-body-2">
@@ -81,12 +81,12 @@
   <view class="shop-body-1">
     <view class="iconfont icon-quxiao shop-body-back" catchtap="addres_back"></view>
     <view class="shop-addres-1">收货地址</view>
-    <view class="shop-addres-2" wx:if="{{shop.shopaddress}}">
+    <view class="shop-addres-2" wx:if="{{shopaddress == false}}">
       <view class="iconfont icon-iconfontdizhi addres-logo"></view>
       <view class="address-p">还没有收货地址，快去添加吧！</view>
-      <view class="address-button" catchtap="addnewaddress">
+    </view>
+    <view class="address-button" catchtap="addnewaddress">
         <view class="address-button-1">新增地址</view>
       </view>
-    </view>
   </view>
 </view>

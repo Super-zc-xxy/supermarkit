@@ -115,12 +115,12 @@ page{
 }
 .bk-shop{
   width: 100%;
-  display: flex;
 }
 .bk-shop>view{
   width: 30%;
   margin: 5% 1.5%;
   position: relative;
+  float: left;
 }
 .bk-shop>view>image{
   width: 100%;
@@ -156,6 +156,7 @@ page{
   overflow: hidden;
   white-space: nowrap;
   font-weight: 700;
+  margin: 10rpx 20rpx;
 }
 .bk-text1{
   font-size: 20rpx;
@@ -221,13 +222,13 @@ page{
   flex-wrap: wrap;
 }
 .all-shop-main{
-  width: 48%;
-  margin:.5%;
-  border: 1px solid rgb(244,244,244);
-  box-shadow: 2px 2px 5px black;
+  width: 46%;
+  margin:1.5%;
+  border-radius: 30rpx;
+  background: white;
 }
 .all-shop-main>image{
-  width: 100%;
+  width: 200rpx;
   height: 200rpx;
 }
 .all-shop-main-p{
@@ -236,13 +237,14 @@ page{
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: 30rpx;
-  font-weight: 700;
+  font-size: 25rpx;
+  text-align: center;
 }
 .all-shop-main-p1{
-  text-align: left;
-  font-weight: 700;
   color: red;
+  margin-left: 165rpx;
+  margin-bottom: 20rpx;
+  font-size: 40rpx;
 }
 .all-shop-main-p2{
   width: 100%;

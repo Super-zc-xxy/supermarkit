@@ -7,8 +7,8 @@
 <!-- 这是轮播 -->
 <view class="swiper">
   <swiper autoplay="true" circular="true" duration="1000" interval="3000">
-    <swiper-item wx:for="{{swiperlist}}" wx:key="index">
-      <image src="{{item.swiper}}"></image>
+    <swiper-item wx:for="{{shoplist}}" wx:key="index" catchtap="xiangqin" data-faddish="{{index}}">
+      <image src="{{item.img1}}"></image>
     </swiper-item>
   </swiper>
 </view>
@@ -27,12 +27,26 @@
 <view class="baokuan">
   <view class="bk-mr"><text class="bk-title">爆款排行<text>超多人想要</text><text>更多爆款 ></text></text></view>
   <view class="bk-shop">
-    <view wx:for="{{bk_shop}}" wx:key="index" catchtap="faddish" data-faddish="{{item.id}}">
-      <image src="{{item.img1}}"></image>
-      <view class="iconfont {{item.img2}} {{item.class}}"></view>
-      <view class="bk-text">{{item.p}}</view>
-      <view class="bk-text bk-text1">{{item.p1}}</view>
-      <view class="bk-text ">{{item.p2}}</view>
+    <view catchtap="bk" data-faddish="0">
+      <image src="{{bk_shoplist[0].img1}}"></image>
+      <view class="iconfont icon-first bk-1"></view>
+      <view class="bk-text">{{bk_shoplist[0].title}}</view>
+      <view class="bk-text bk-text1">{{bk_shoplist[0].produce}}</view>
+      <view class="bk-text ">{{bk_shoplist[0].price}}</view>
+    </view>
+    <view catchtap="bk" data-faddish="1">
+      <image src="{{bk_shoplist[1].img1}}"></image>
+      <view class="iconfont icon-second bk-2"></view>
+      <view class="bk-text">{{bk_shoplist[0].title}}</view>
+      <view class="bk-text bk-text1">{{bk_shoplist[0].produce}}</view>
+      <view class="bk-text ">{{bk_shoplist[0].price}}</view>
+    </view>
+    <view catchtap="bk" data-faddish="2">
+      <image src="{{bk_shoplist[2].img1}}"></image>
+      <view class="iconfont icon-third bk-3"></view>
+      <view class="bk-text">{{bk_shoplist[0].title}}</view>
+      <view class="bk-text bk-text1">{{bk_shoplist[0].produce}}</view>
+      <view class="bk-text ">{{bk_shoplist[0].price}}</view>
     </view>
   </view>
 </view>
@@ -42,11 +56,11 @@
     <view class="xp-title2">更多新品 ></view>
   </view>
   <view class="xp-shop">
-    <view wx:for="{{xp_shop}}" wx:key="index">
+    <view wx:for="{{xp_shoplist}}" wx:key="index" bindtap="xp" data-faddish="{{index}}">
       <image src="{{item.img1}}"></image>
-      <view class="bk-text">{{item.p}}</view>
-      <view class="bk-text bk-text1">{{item.p1}}</view>
-      <view class="bk-text ">{{item.p2}}</view>
+      <view class="bk-text">{{item.title}}</view>
+      <view class="bk-text bk-text1">{{item.produce}}</view>
+      <view class="bk-text ">{{item.price}}</view>
     </view>
   </view>
 
@@ -56,10 +70,11 @@
   <view class="all-title" wx:for="{{all}}" wx:key="index" catchtap="topbar" data-id="{{item.id}}">{{item.title}}
     <view class="all-p">{{item.p}}</view>
     <view wx:if="{{index == current}}" class="all-shop">
-      <view class="all-shop-main" wx:for="{{item.shop}}" wx:key="index" wx:for-item="items">
+      <view class="all-shop-main" wx:for="{{item.shoplist}}" wx:key="index" wx:for-item="items" bindtap="show" data-faddish="{{index}}">
         <image src="{{items.img1}}"></image>
-        <view class="all-shop-main-p">{{items.p}}</view>
-        <view class="all-shop-main-p1">{{items.p1}}</view>
+        <view class="all-shop-main-p">{{items.title}}</view>
+        <view class="all-shop-main-p">{{items.produce}}</view>
+        <view class="all-shop-main-p1">￥{{items.price}}</view>
       </view>
       <view class="all-shop-main-p2">----------没有更多了----------</view>
     </view>

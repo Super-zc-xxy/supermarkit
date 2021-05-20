@@ -8,18 +8,13 @@ Page({
     lastid:'',
     shopswiperindex:1,
     shopnum:1,
-    shop:
-      {
-        shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],
-        shopprice:"9.99",
-        shopname:'小米巨能写中性笔10枝装',
-        shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],
-        shopbuystate:false,
-        shopinfo:[{shopname:'小米巨能写黑色中性笔10枝装',shopprice:"￥9.99",shopimg:'/static/swiper/sp1.png'}],
-        shopnum:1,
-        shopaddresstate:false,
-        shopaddress:true,
-    }
+    shopuser:[{
+      username:'张超',
+      phone:'17398893373',
+      address:'阿巴巴巴',
+      moreaddress:'阿巴巴巴',
+      morestate:true
+    }]
   },
   // 返回上一个页面
   back(){
@@ -36,10 +31,17 @@ Page({
   },
   //地址弹框
   addres(){
-    this.data.shop.shopaddresstate = true;
+    console.log(this.data.shopuser.length);
+      if(this.data.shopuser.length>0){
+        this.data.shop.shopaddresstate = false;
+      }else{
+        this.data.shop.shopaddresstate = true;
+      }
     this.setData({
-      shopaddres:this.data.shop
+      shopaddres:this.data.shop,
+      shopaddress:this.data.shop.shopaddress
     })
+    console.log(this.data.shop.shopaddresstate);
   },
   //地址返回
   addres_back(){
@@ -99,17 +101,18 @@ Page({
    */
   onLoad: function (options) {
     var faddish =   options.faddish;
+    var useraddress = options.useraddress;
+    this.data.shop = JSON.parse(faddish);
     this.setData({
       faddish:faddish,
+      useraddress:useraddress,
+      shop:this.data.shop
     })
-    // console.log(JSON.parse(faddish));
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

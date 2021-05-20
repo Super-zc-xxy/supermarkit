@@ -39,7 +39,7 @@ page{
 }
 .info-1{
   display: flex;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid rgb(230,230,230);
   padding: 40rpx 0;
 }
 .info-1>input{
@@ -48,7 +48,34 @@ page{
 .info-2{
   border-bottom: none;
 }
+.info-2>view{
+  width: 200rpx;
+}
+.info-2>textarea{
+  height: 80rpx;
+}
 .icad{
   color: orangered;
   font-weight: 700;
+}
+.addres-mrdz{
+  margin-top: 40rpx;
+}
+.addres-add{
+  width: 100%;
+  padding: 20rpx 0;
+  position: absolute;
+  bottom: 0;
+  background: white;
+}
+.addres-add-button{
+  width: 90%;
+  margin-left: 5%;
+  padding: 20rpx 0;
+  background:rgb(255,97,40);
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border-radius: 40rpx;
 }

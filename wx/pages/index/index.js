@@ -5,26 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperlist:[
-      {swiper:'/static/swiper/sp1.png'},
-      {swiper:'/static/swiper/sp2.png'},
-      {swiper:'/static/swiper/sp3.png'},
-      {swiper:'/static/swiper/sp4.png'},
-      {swiper:'/static/swiper/sp5.png'},
-      {swiper:'/static/swiper/sp6.png'},
-      {swiper:'/static/swiper/sp7.png'},
-      {swiper:'/static/swiper/sp8.png'},
-      {swiper:'/static/swiper/sp9.png'},
-      {swiper:'/static/swiper/sp10.png'},
-      {swiper:'/static/swiper/sp11.png'},
-      {swiper:'/static/swiper/sp12.png'},
-      {swiper:'/static/swiper/sp13.png'},
-      {swiper:'/static/swiper/sp14.png'},
-      {swiper:'/static/swiper/sp15.png'},
-      {swiper:'/static/swiper/sp16.png'},
-      {swiper:'/static/swiper/sp17.png'},
-      {swiper:'/static/swiper/sp18.png'},
-    ],
     baozhang:[
       {img1:'icon-shangpin',p:'正品商品'},
       {img1:'icon-approve',p:'官方认证'},
@@ -38,29 +18,78 @@ Page({
       {img1:'icon-lingshi',p:'零食',id:'4'},
       {img1:'icon-shenghuoyongpin',p:'生活用品',id:'5'},
     ],
-    bk_shop:[
-      {img1:'/static/swiper/sp1.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-first',class:'bk-1',id:'0'},
-      {img1:'/static/swiper/sp2.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-second',class:'bk-2',id:'1'},
-      {img1:'/static/swiper/sp3.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-third',class:'bk-3',id:'2'},
-    ],
-    xp_shop:[
-      {img1:'/static/swiper/sp1.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-first',class:'bk-1'},
-      {img1:'/static/swiper/sp2.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-second',class:'bk-2'},
-      {img1:'/static/swiper/sp3.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-third',class:'bk-3'}, 
-      {img1:'/static/swiper/sp1.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-first',class:'bk-1'},
-      {img1:'/static/swiper/sp2.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-second',class:'bk-2'},
-      {img1:'/static/swiper/sp3.png',p:'这是测试呀，千万别当真了呀！兄弟们',p1:'这是进一步测试，知不知道呀！',p2:'￥99',img2:'icon-third',class:'bk-3'},
-    ],
     all:[
-      {title:'精选',p:'为你推荐',id:'0',shop:[{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
-      {title:'烟',p:'吞云吐雾',id:'1',shop:[{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
-      {title:'酒',p:'醉生梦死',id:'2',shop:[{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
-      {title:'玩具',p:'懵懂童趣',id:'3',shop:[{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
-      {title:'水',p:'生命源泉',id:'4',shop:[{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
-      {title:'零食',p:"闲暇神器",id:'5',shop:[{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
-      {title:'生活用品',p:'小康社会',id:'6',shop:[{img1:'/static/swiper/sp10.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp9.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp8.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp7.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp6.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp5.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp4.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp3.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp2.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'},{img1:'/static/swiper/sp1.png',p:'这是测试呀，兄弟们，时代锦刷卡机到拉萨空当接龙三',p1:'￥1999'}]},
+      {title:'精选',p:'为你推荐',id:'0', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0'},
+      ]},
+      {title:'烟',p:'吞云吐雾',id:'1', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'1'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'1'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'1'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'1'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'1'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'1'},
+      ]},
+      {title:'酒',p:'醉生梦死',id:'2', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'2'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'2'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'2'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'2'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'2'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'2'},
+      ]},
+      {title:'玩具',p:'懵懂童趣',id:'3', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'3'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'3'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'3'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'3'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'3'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'3'},
+      ]},
+      {title:'水',p:'生命源泉',id:'4', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'4'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'4'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'4'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'4'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'4'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'4'},
+      ]},
+      {title:'零食',p:"闲暇神器",id:'5', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'5'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'5'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'5'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'5'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'5'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'5'},
+      ]},
+      {title:'生活用品',p:'小康社会',id:'6', shoplist:[
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'6'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'6'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'6'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'6'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'6'},
+        {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'6'},
+      ]},
     ],
     current:0,
+    shoplist:[
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'1',xp_state:'2',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],
+      shopnum:1,shopaddresstate:false,shopaddress:true,},
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'0',xp_state:'2',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}]
+      ,shopnum:1,shopaddresstate:false,shopaddress:true,},
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'0',xp_state:'2',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],shopnum:1,shopaddresstate:false,shopaddress:true,},
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'1',xp_state:'2',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],shopnum:1,shopaddresstate:false,shopaddress:true,},
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'1',xp_state:'2',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],shopnum:1,shopaddresstate:false,shopaddress:true,},
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'0',xp_state:'2',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],shopnum:1,shopaddresstate:false,shopaddress:true,},
+      {img1:'/static/swiper/sp1.png',title:'test1',produce:'这是介绍',price:'99',state:'0',bk_state:'0',xp_state:'0',shopswiper:[{img1:'/static/swiper/sp1.png',id:'1'},{img1:'/static/swiper/sp5.png',id:'2'},{img1:'/static/swiper/sp2.png',id:'3'},{img1:'/static/swiper/sp3.png',id:'4'},{img1:'/static/swiper/sp4.png',id:'5'}],shopproduce:[{img1:'icon-1',p:'4倍书写长度'},{img1:'icon-icon-test',p:'日本MLKUNI油墨'},{img1:'icon-3',p:'0.5mm弹簧子弹头'}],shopnum:1,shopaddresstate:false,shopaddress:true,}
+    ],
+    xp_shoplist:[],
+    bk_shoplist:[]
   },
 
   topbar:function(e){
@@ -69,36 +98,58 @@ Page({
       current:id
     })
   },
-  faddish(e){
-    var faddish = e.currentTarget.dataset.faddish;
-    for(let i=0;i<this.data.bk_shop.length;i++){
-      if(faddish == this.data.bk_shop[i].id){
-        // console.log(this.data.bk_shop[i]);
+  //封装跳转函数
+  faddish(e,_array){
+    var faddish = e.currentTarget.dataset.faddish -0;
         wx.navigateTo({
-          url: `../shop/shop?faddish=${JSON.stringify(this.data.bk_shop[faddish])}`
+          url: `../shop/shop?faddish=${JSON.stringify(_array[faddish])}`
         })
-      }
-    }
+  },
+  //调用函数
+  xiangqin(e){
+    this.faddish(e,this.data.shoplist)
+  },
+  //调用爆款详情
+  bk(e){
+    this.faddish(e,this.data.bk_shoplist)
+  },
+  //调用新品好物
+  xp(e){
+    this.faddish(e,this.data.xp_shoplist)
+  },
+  //调用显示首页下面
+  show(e){
+    this.faddish(e,this.data.all[this.data.current].shoplist);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    for(let i=0;i<this.data.shoplist.length;i++){
+      if(this.data.shoplist[i].bk_state == 1){
+        this.data.bk_shoplist.push(this.data.shoplist[i]);
+      }
+      if(this.data.shoplist[i].xp_state == 2){
+        this.data.xp_shoplist.push(this.data.shoplist[i]);
+      }
+    }
+    this.setData({
+      bk_shoplist:this.data.bk_shoplist,
+      xp_shoplist:this.data.xp_shoplist
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    //循环数据，动态添加新数组
   },
 
   /**

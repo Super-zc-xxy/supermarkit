@@ -1,0 +1,21 @@
+<!--pages/species/species.wxml-->
+<!-- 这是主体 -->
+<view class="main">
+  <!-- 这是分类左边 -->
+  <view class="main-left">
+    <view wx:for="{{shop}}" wx:key="index" wx:for-index="index">
+      <view data-index="{{index}}" bindtap="shoper">{{item.title}}</view>
+    </view>
+  </view>
+  <!-- 这是分类右边 -->
+  <view class="main-right">
+      <view class="right-shoper" wx:for="{{shoper}}" wx:for-item="item" wx:key="index">
+        <image src="{{item.img}}"></image>
+        <view class="right-main">
+          <view class="right-title">{{item.name}}</view>
+          <view class="right-produce">{{item.produce}}</view>
+          <view class="right-price"><text>￥</text>{{item.price}}</view>
+        </view>
+      </view>
+  </view>
+</view>

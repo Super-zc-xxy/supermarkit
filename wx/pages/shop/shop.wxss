@@ -56,13 +56,14 @@ page{
   font-size: 30rpx;
 }
 .shop-produce{
-  padding:0 20rpx;
+  padding:20rpx;
   font-size: 30rpx;
   font-weight: 700;
   margin-bottom: 20rpx;
 }
 .fenxiang{
-  margin-left: 250rpx;
+  position: absolute;
+  right: 40rpx;
 }
 .shop-main{
   padding: 5rpx 20rpx;

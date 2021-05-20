@@ -5,40 +5,69 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mr:false
+    isChecked2: false,
+    username: "",
+    phone: '',
+    chooseAddress: '',
+    moreaddress: '',
+    addressstate: false,
+    userinfo: []
   },
-//返回上一级
-back(){
-  wx.navigateBack({
-    delta: 1,
-  })
-},
-//地址选取
-onChangeAddress(){
-  var _page = this;
+  //返回上一级
+  back() {
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  //地址选取
+  onChangeAddress() {
+    var _page = this;
     wx.chooseLocation({
-        success: function(res) {
-         _page.setData({
-           chooseAddress: res.address
-         });
+      success: function (res) {
+        _page.setData({
+          chooseAddress: res.address
+        });
       },
-      fail: function(err) {
+      fail: function (err) {
         console.log(err)
       }
     });
- },
- //默认地址
- mrdz(){ 
-   this.data.mr = true;
-   this.setData({
-     mr:this.data.mr
-   })
- },
+  },
+  //默认地址
+  changeSwitch2(e) {
+    this.setData({})
+    this.data.addressstate = e.detail.value;
+    //  console.log(e.detail.value);
+  },
+    //保存用户信息
+     add() {
+      let state = false;
+      if (this.data.userinfo != "" || this.data.phone != "" || this.data.phone != "" || this.data.chooseAddress != "" || this.data.moreaddress != "") {
+        this.data.userinfo.push({
+          username: this.data.username,
+          phone: this.data.phone,
+          chooseAddress: this.data.chooseAddress,
+          moreaddress: this.data.moreaddress,
+          addressstate: this.data.addressstate
+        })
+        console.log(this.data.userinfo);
+        state = true;
+      }else{
+       wx.showModal({
+         title:'温馨提示',
+         content:'请填写完整信息',
+       })
+      }
+      if(state == true){
+        wx.navigateBack({
+          delta: 1,
+        })
+      }
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -88,5 +117,5 @@ onChangeAddress(){
    */
   onShareAppMessage: function () {
 
-  }
+  },
 })

@@ -4,7 +4,9 @@
     "pages/me/me",
     "pages/user/user",
     "pages/shop/shop",
-    "pages/address/address"
+    "pages/address/address",
+    "pages/species/species",
+    "pages/shopingcar/shopingcar"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -12,13 +14,35 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "color": "#000000",  
+    "selectedColor": "#00BFFF", 
+    "backgroundColor": "#FFFFFF", 
+    "borderStyle": "black",
+    "position": "bottom",
+    "custom": false,
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页",
+      "iconPath":"/static/footicon/home.png",
+      "selectedIconPath":"/static/footicon/home1.png"
+    },
+    {
+      "pagePath":"pages/species/species",
+      "text":"分类",
+      "iconPath":"/static/footicon/fenlei.png",
+      "selectedIconPath":"/static/footicon/feilei1.png"
+    },
+    {
+      "pagePath":"pages/shopingcar/shopingcar",
+      "text":"购物车",
+      "iconPath":"/static/footicon/gw.png",
+      "selectedIconPath":"/static/footicon/gw1.png"
     },
     {
       "pagePath": "pages/me/me",
-      "text": "我的"
+      "text": "我的",
+      "iconPath":"/static/footicon/me.png",
+      "selectedIconPath":"/static/footicon/me1.png"
     }
   ]
   },
