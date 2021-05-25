@@ -1,0 +1,98 @@
+<!--pages/shop/shop.wxml-->
+<!-- 这是商品轮播 -->
+<view class="header-swiper">
+  <!-- <view class="back"><view class="iconfont icon-xiazai6" catchtap="back"></view></view> -->
+  <swiper  bindchange="onchange">
+    <swiper-item wx:for="{{itemArray.imgArray}}" wx:key="index" class="swiper-item">
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="swiper-num">{{shopswiperindex}}/{{itemArray.imgArray.length}}</view>
+</view>
+<!-- 这是商品价格和介绍 -->
+<view class="shop-price">
+  <view class="shop-money"><text class="shop-sup">￥</text>{{itemArray.nowprice}}</view>
+  <view class="shop-produce">{{itemArray.titlename}}<text class="iconfont icon-fenxiang fenxiang"></text></view>
+  <view class="shop-main" wx:for="{{itemArray.intrArray}}" wx:key="index" data-index="index">
+    <view class="spmiaoshu">
+    <view class="box-ms">{{index+1}}</view>
+    <text>{{item}}</text>
+    </view>
+  </view>
+</view>
+<!-- 这是排行榜 -->
+<view class="shop-list">
+  <text class="iconfont icon-jiangbei list-jp"></text><view class="list-title">排行榜</view><view class="list-main">入选 【低价好物热销榜】</view>
+</view>
+<!-- 这是用户购买 -->
+<view class="shop-user">
+  <view class="user-main" catchtap="buy">
+    <text class="user-main-1">已选</text><text class="user-main-2">{{shop.title}} <text class="user-main-3">x{{itemArray.prtnum}}</text><text class="user-main-4">></text></text>
+  </view>
+  <view class="user-main" catchtap="addres">
+    <text class="user-main-1 ">送至</text><text class="iconfont icon-zhizhen user-main-2-1"></text><text style="margin-left:20rpx">成都市 高新区</text><text class="user-main-4">></text>
+  </view>
+</view>
+<!-- 这是用户购物车 -->
+<view class="shop-buy">
+  <view class="buy-home" catchtap="home">
+    <text class="iconfont icon-shouye home-1" ></text>
+    <text class="home-2">首页</text>
+  </view>
+  <view class="buy-home" catchtap="toshopcar">
+    <text class="iconfont icon-gouwuche home-1" ></text>
+    <text class="home-2">购物车</text>
+    <view class="carnum" wx:if="{{shopcarnum != ''}}">{{shopcarnum}}</view>
+  </view>
+  <view class="buy-buy">
+    <view class="buy-gw" bindtap="addshopcar">加入购物车</view>
+    <view class="buy-gm" bindtap="buynow">立即购买</view>
+  </view>
+</view>
+<!-- 这是购买界面 -->
+<view class="shop-body" wx:if="{{shopbuystate}}">
+  <view class="shop-body-1">
+    <view class="iconfont icon-quxiao shop-body-back" catchtap="body_back"></view>
+    <view class="shop-body-1-1">
+      <image src="{{itemArray.img1}}"></image>
+      <view class="shop-body-1-2">
+        <view class="shop-body-1-2-1">￥{{itemArray.nowprice}}</view>
+        <view class="shop-body-1-2-2">{{itemArray.titlename}}</view>
+      </view>
+    </view>
+    <view class="shop-body-2">
+      <view class="shop-body-2-title">
+        <view>购买数量</view>
+      </view>
+    </view>
+    <view class="shop-num">
+      <view class="shop-reduce" catchtap="reduce">
+        <view class="iconfont icon-jian"></view>
+      </view>
+      <view class="num-num">{{itemArray.prtnum}}</view>
+      <view class="shop-add" catchtap="add">
+        <view class="iconfont icon-jia"></view>
+      </view>
+    </view>
+    <view class="shop-buy-2">
+      <view class="shop-buy-2-1" bindtap="addshopcar">加入购物车</view>
+      <view class="shop-buy-2-2" bindtap="buynow">立即购买</view>
+    </view>
+  </view>
+</view>
+<!-- 这是地址页面 -->
+<view class="shop-addres" wx:if="{{shopaddres}}">
+  <view class="shop-body-1">
+    <view class="iconfont icon-quxiao shop-body-back" catchtap="addres_back"></view>
+    <view class="shop-addres-1">收货地址</view>
+    <view class="shop-addres-2" wx:if="{{shopaddress == false}}">
+      <view class="iconfont icon-iconfontdizhi addres-logo"></view>
+      <view class="address-p">还没有收货地址，快去添加吧！</view>
+    </view>
+    <view class="address-button" catchtap="addnewaddress">
+        <view class="address-button-1">新增地址</view>
+      </view>
+  </view>
+</view>
+<!-- 已添加购物车提示 -->
+<view class="tis-shopcar {{tiscar}}">已在购物车</view>

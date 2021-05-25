@@ -1,0 +1,47 @@
+<!--pages/pay/pay.wxml-->
+<view class="contain">
+  <view class="tip-size">
+    <view>
+      <view class="size-img">
+        <view class="iconfont icon-dizhi1 dizhi"></view>
+      </view>
+      <view class="size-text">手动添加地址</view>
+    </view>
+  </view>
+  <view class="box1">
+    <view class="img-box">
+      <view wx:for="{{carlist}}" wx:for-index="index" wx:key="index" data-index="{{index}}">
+        <image src="{{carlist[index].img1}}"></image>
+      </view>
+    </view>
+    <view class="allnumbox">
+      <view>共 {{nums}} 件</view>
+      <view class="iconfont icon-jiantou jiantou"></view>
+    </view>
+  </view>
+  <view class="box2">
+    <view class="box2-item1">
+      <view>商品总价</view>
+      <view>￥ {{AllPrice}}</view>
+    </view>
+    <view class="box2-item1">
+      <view>运费</view> 
+      <view>包邮</view>
+    </view>
+    <view class="box2-item1">
+      <view>优惠卷</view>
+      <view class="box2-right-view">
+        <view>无可用</view>
+        <view class="iconfont icon-jiantou jiantou"></view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部支付 -->
+  <view class="bottom-box">
+    <view class="numbox">
+      <view>共{{nums}}件，合计</view>
+      <view class="sptext">￥{{AllPrice}}</view>
+    </view>
+    <view class="topay">去付款</view>
+  </view>
+</view>

@@ -1,0 +1,382 @@
+/* pages/shop/shop.wxss */
+page{
+  position: relative;
+  background:rgb(228, 224, 220);
+}
+.header-swiper{
+  width: 100%;
+  height: 700rpx;
+  position: relative;
+}
+.back{
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  top: 100rpx;
+  left: 50rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:white;
+  z-index: 10;
+}
+.header-swiper>swiper{
+  width: 100%;
+  height: 90%;
+}
+.swiper-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-item>image{
+  width: 90%;
+  height: 90%;
+}
+.swiper-num{
+  position: absolute;
+  padding: 15rpx;
+  border-radius: 40%;
+  background:rgb(0, 0, 0,.3);
+  right: 20rpx;
+  bottom: 20rpx;
+}
+.shop-price{
+  width: 100%;
+  background:white;
+}
+.shop-money{
+  font-size: 40rpx;
+  color: rgb(255,0,0);
+  padding: 20rpx;
+}
+.shop-sup{
+  vertical-align: super;
+  font-size: 30rpx;
+}
+.shop-produce{
+  padding:20rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+.fenxiang{
+  position: absolute;
+  right: 40rpx;
+}
+.shop-main{
+  padding: 5rpx 20rpx;
+  font-size: 20rpx;
+}
+.shop-price view:nth-last-child(1){
+  line-height: 60rpx;
+}
+.shop-main text{
+  margin-left:20rpx;
+}
+.shop-list{
+  width: 100%;
+  background:rgb(255,230,215);
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  margin-bottom: 20rpx;
+}
+.list-jp{
+  margin-left:20rpx;
+  color:orange;
+}
+.list-title{
+  margin-left: 20rpx;
+  font-weight: 700;
+}
+.list-main{
+  font-size: 25rpx;
+  margin-left: 50rpx;
+  font-weight: 700;
+}
+.shop-user{
+  width: 100%;
+  margin-bottom: 200rpx;
+}
+.user-main{
+  padding:40rpx;
+  background: white;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: 1px solid rgb(228,224,220);
+  position: relative;
+}
+.user-main-1{
+  font-weight: 700;
+}
+.user-main-2{
+  margin-left: 40rpx;
+}
+.user-main-3{
+  margin-left: 20rpx;
+  color: #999;
+}
+.user-main-4{
+  margin-left: 150rpx;
+  color: #999;
+  position: absolute;
+  right: 40rpx;
+}
+.user-main-2-1{
+  margin-left: 40rpx;
+  font-weight: 700;
+}
+.shop-buy{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  display: flex;
+}
+.buy-home{
+  text-align: center;
+  margin: 30rpx;
+  position: relative;
+}
+.home-1{
+  display: block;
+  font-size: 60rpx;
+}
+.home-2{
+  font-size: 25rpx;
+}
+.buy-buy{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buy-gw{
+  background: red;
+  padding:20rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  color: white;
+}
+.buy-gm{
+  background: rgb(226, 152, 14);
+  padding:20rpx;
+  border-radius: 0 50rpx 50rpx 0;
+  color: white;
+}
+.shop-body{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  background:rgb(0,0,0,.5);
+  z-index: 11;
+}
+.shop-body-1{
+  width: 100%;
+  height: 1200rpx;
+  border-radius: 3% 3% 0 0;
+  background:white;
+  position: fixed;
+  bottom: 0; 
+  z-index: 266;
+}
+.shop-body-back{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.shop-body-1-1{
+  width: 100%;
+  margin-top: 70rpx;
+  display: flex;
+}
+.shop-body-1-1>image{
+  width: 200rpx;
+  height: 200rpx;
+  margin:40rpx;
+}
+.shop-body-1-2{
+  width: 400rpx;
+  height: 200rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.shop-body-1-2-1{
+  color: red;
+  font-size: 40rpx;
+  padding: 20rpx;
+}
+.shop-body-1-2-2{
+  font-size: 25rpx;
+  margin-left: 20rpx;
+}
+.shop-body-2-title{
+  padding: 20rpx 40rpx;
+  font-weight: 700;
+}
+.shop-body-2{
+  float: left;
+}
+.shop-num{
+  display: flex;
+  height: 80rpx;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin-left: 240rpx;
+}
+.shop-reduce{
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  margin: 0 20rpx;
+}
+.shop-reduce>view{
+  font-size: 40rpx;
+}
+.num-num{
+  width: 80rpx;
+  height: 40rpx;
+  background:rgb(220,220,222,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shop-add{
+  width: 60rpx;
+  height: 30rpx;
+  display: flex;
+  justify-content: center;
+  margin: 0 20rpx;
+}
+.shop-buy-2{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-buy-2-1{
+  width: 45%;
+  height: 100rpx;
+  background: orange;
+  border-radius:50rpx 0 0 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.shop-buy-2-2{
+  width: 45%;
+  height: 100rpx;
+  background: rgb(255, 17, 0);
+  border-radius: 0 50rpx 50rpx 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.shop-addres{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  background:rgb(0,0,0,.5);
+  z-index: 11;
+}
+.shop-addres-1{
+  width: 100%;
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+}
+.shop-addres-2{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.addres-logo{
+  font-size: 100rpx;
+}
+.address-p{
+  font-size: 25rpx;
+  margin:20rpx;
+  color: #999;
+}
+.address-button{
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.address-button-1{
+  width: 90%;
+  height: 90rpx;
+  border-radius: 45rpx;
+  background: orangered;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.box-ms{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  font-size: 20rpx;
+}
+.spmiaoshu{
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+}
+.tis-shopcar{
+  position: fixed;
+  top: 600rpx;
+  left: 250rpx;
+  background-color: #000;
+  color: #fff;
+  opacity: .7;
+  display: none;
+  padding: 20rpx 40rpx;
+  font-size: 28rpx;
+}
+.tis-shopcar-1{
+  display: block;
+}
+.carnum{
+  height: 40rpx;
+  width: 40rpx;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

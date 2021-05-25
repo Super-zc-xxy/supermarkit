@@ -1,0 +1,53 @@
+<!--pages/waitpay/waitpay.wxml-->
+<view class="contain-box">
+<view class="top-nav">
+  <view bindtap="all">
+    <view>全部</view>
+    <view class="outline {{outline[0]}}"></view>
+  </view>
+  <view bindtap="waitpay">
+    <view>代付款</view>
+    <view class="outline {{outline[1]}}"></view>
+  </view>
+  <view bindtap="waitget">
+    <view>待收货</view>
+    <view class="outline {{outline[2]}}"></view>
+  </view>
+</view>
+<view class="allfromisnone" wx:if="{{carlist == ''}}">
+  <view class="nonefrom-img">
+    <view class="iconfont icon-17 nonefrom-img1"></view>
+  </view>
+  <view class="nofrom-tis">您没有相关订单</view>
+  <view class="goshop-btn">到小米商城逛逛</view>
+</view>
+<view class="waitpay">
+  <view class="waitpay-items" wx:for="{{carlist1}}" wx:for-index="index" wx:key="index" wx:if="{{carlist1 != ''}}">
+    <view class="items-state">{{carlist1[index].paystate}}</view>
+    <view class="waitpay-items-box1">
+      <image src="{{carlist1[index].img1}}"></image>
+      <view class="items-box1-right">
+        <view class="shopname">
+          <view>{{carlist1[index].titlename}}</view>
+          <view class="shopname-1">{{carlist1[index].typeArray[0].typetext}}</view>
+        </view>
+        <view class="pricebox">
+          <view class="price">￥{{carlist1[index].nowprice}}</view>
+          <view class="num"> <text>x</text> {{carlist1[index].prtnum}} </view>
+        </view>
+      </view>
+    </view>
+    <view class="allprice">
+      <view class="allprice-price">总价￥{{(carlist1[index].prtnum-0)*(carlist1[index].nowprice-0)}} </view>
+
+      <view>实付款￥{{(carlist1[index].prtnum-0)*(carlist1[index].nowprice-0)}} </view>
+    </view>
+  </view>
+  <view wx:if="{{carlist1 == ''}}">
+      <view class="nonefrom-img">
+        <view class="iconfont icon-17 nonefrom-img1"></view>
+      </view>
+      <view class="nofrom-tis">您没有相关订单</view>
+    </view>
+</view>
+</view>

@@ -1,0 +1,101 @@
+<view class="contain">
+  <view class="top-box">
+    <view class="top">
+      <view class="top-div">
+        <view class="top-div-1st">
+          <view class="head-img">
+            <image src="../img/sp5.png"></image>
+          </view>
+          <view class="name-outbox">
+            <text class="name-text">RJQ</text>
+            <view class="id-box">
+              <text>小米id：</text>
+              <text>12684684864</text>
+              <view class="id-btn">切换账号</view>
+            </view>
+          </view>
+          <!-- right-img -->
+          <view class="ewm-outbox">
+            <view class="ewm-text">到店扫码</view>
+            <view class="sjx"></view>
+            <view class="iconfont icon-ico ewm-img"></view>
+          </view>
+
+        </view>
+        <view class="top-div-2nd">
+          <view class="top-2nd-view">
+            <view class="top-2nd-view-text1">0</view>
+            <view class="top-2nd-view-text2">优惠券</view>
+          </view>
+          <view class="top-2nd-view">
+            <view class="top-2nd-view-text1">0</view>
+            <view class="top-2nd-view-text2">红包</view>
+          </view>
+          <view class="top-2nd-view">
+            <view class="top-2nd-view-text1">0</view>
+            <view class="top-2nd-view-text2">米金</view>
+          </view>
+          <view class="top-2nd-view">
+            <view class="top-2nd-view-text1">0</view>
+            <view class="top-2nd-view-text2">F码</view>
+          </view>
+        </view>
+        <view class="top-div-3rd">
+          <view class="top-3rd-view">
+            <view class="top-3rd-text-box">
+              <text class="top-3rd-text1">会员中心</text>
+              <view class="top-3rd-text2">新权益></view>
+            </view>
+            <view class="top-3rd-imgbox">
+              <image src="../img/sp1.png"></image>
+            </view>
+          </view>
+          <view class="top-3rd-view">
+            <view class="top-3rd-text-box">
+              <text class="top-3rd-text1">米金商城</text>
+              <view class="top-3rd-text2">限量神劵></view>
+            </view>
+            <view class="top-3rd-imgbox">
+              <image src="../img/sp1.png"></image>
+            </view>
+          </view>
+          <view class="top-3rd-view">
+            <view class="top-3rd-text-box">
+              <text class="top-3rd-text1">链接设备</text>
+              <view class="top-3rd-text2">领取米金></view>
+            </view>
+            <view class="top-3rd-imgbox">
+              <image src="../img/sp1.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="nav">
+    <view bindtap="waitpay">
+      <view class="iconfont icon-daifukuan nav-text-img"></view>
+      <view>待付款</view>
+    </view>
+    <view bindtap="waitget">
+      <view class="iconfont icon-daishouhuo nav-text-img"></view>
+      <view>待收货</view>
+    </view>
+    <view>
+      <view class="iconfont icon-kuaidi nav-text-img"></view>
+      <view>门店GO</view>
+    </view>
+    <view>
+      <view class="iconfont icon-huaban27 nav-text-img"></view>
+      <view>众筹抽奖</view>
+    </view>
+    <view  bindtap="waitall">
+      <view class="iconfont icon-17 nav-text-img"></view>
+      <view>全部订单</view>
+    </view>
+
+  </view>
+
+
+</view>

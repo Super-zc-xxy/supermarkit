@@ -1,0 +1,94 @@
+<!--pages/index/index.wxml-->
+<!-- 这是头部 -->
+<view class="header">
+  <image src="/static/logo.jpg"></image>
+  <view class="input-box-r">
+    <view class="iconfont icon-sousuo input-img"></view>
+    <input class="head-input" type="text" placeholder=" 搜索超市商品" />
+  </view>
+
+</view>
+<!-- 这是轮播 -->
+<view class="swiper">
+  <swiper autoplay="true" circular="true" duration="1000" interval="3000">
+    <swiper-item wx:for="{{all[0].shoplist}}" wx:key="index" catchtap="xiangqin" data-faddish="{{index}}">
+      <image src="{{item.img1}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 这是商品保障 -->
+<view class="baozhang">
+  <text wx:for="{{baozhang}}" wx:key="index"><text class="iconfont {{item.img1}}"></text>{{item.p}}</text>
+</view>
+<!-- 这是商品分类 -->
+<view class="shop">
+  <view wx:for="{{shop}}" wx:key="index" bindtap="tospecies" data-index="{{index}}">
+    <text class="iconfont {{item.img1}} shopimg"></text>
+    <text>{{item.p}}</text>
+  </view>
+</view>
+<!-- 这是爆款 -->
+<view class="baokuan">
+  <view class="bk-mr"><text class="bk-title">爆款排行<text>超多人想要</text><text>更多爆款 ></text></text></view>
+  <view class="bk-shop">
+    <view catchtap="bk" data-faddish="{{index}}" wx:for="{{3}}" wx:key="index">
+      <image src="{{bk_shoplist[index].img1}}"></image>
+      <view class="iconfont icon-first bk-1"></view>
+      <view class="bk-text">{{bk_shoplist[index].titlename}}</view>
+      <view class="bk-text bk-text1">{{bk_shoplist[index].produce}}</view>
+      <view class="bk-text ">￥{{bk_shoplist[index].nowprice}}</view>
+    </view>
+  
+  </view>
+</view>
+<!-- 这是新品 -->
+<view class="xinping">
+  <view class="xp-title">新品好物<view class="xp-title1">种草达人推荐</view>
+    <view class="xp-title2">更多新品 ></view>
+  </view>
+  <view class="xp-shop">
+    <view wx:for="{{6}}" wx:key="index" bindtap="xp" data-faddish="{{index}}" >
+      <image src="{{xp_shoplist[index].img1}}"></image>
+      <view class="bk-text">{{xp_shoplist[index].titlename}}</view>
+      <view class="bk-text bk-text1">{{xp_shoplist[index].produce}}</view>
+      <view class="bk-text ">￥{{xp_shoplist[index].nowprice}}</view>
+    </view>
+  </view>
+
+</view>
+<!-- 这是简单展示分类 -->
+<view class="all">
+  <view class="r-textbox-outbox">
+    <view class="r-textbox {{all[index].r_outline_on}}" wx:for="{{all}}" wx:key="index" catchtap="topbar" data-id="{{item.id-1}}">
+      {{item.title}}
+      <view class="all-p">{{item.p}}</view>
+    </view>
+  </view>
+  <view class="all-title" wx:for="{{all}}" wx:key="index" data-id="{{item.id}}">
+    <view wx:if="{{index == current}}" class="all-shop">
+      <view class="all-shop-main" wx:for="{{item.shoplist}}" wx:key="index" wx:for-item="items" bindtap="show"
+        data-faddish="{{index}}">
+        <view class="r-img-box">
+          <image src="{{items.img1}}"></image>
+        </view>
+        <view class="all-shop-main-p">{{items.titlename}}</view>
+        <view class="all-shop-main-p r-main-p">{{items.produce}}</view>
+        <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
+      </view>
+      <view class="all-shop-main-p2">----------没有更多了----------</view>
+    </view>
+  </view>
+</view>
+<!-- 顶部搜索框 -->
+<view class="fixed-input {{fixedinput}}">
+  <view class="input-box-r input-box-r1">
+    <view class="iconfont icon-sousuo input-img"></view>
+    <input class="head-input" type="text" placeholder=" 搜索超市商品" />
+  </view>
+</view>
+<view class="r-textbox-outbox r-textbox-outbox-1 {{over_nav}}">
+  <view class="r-textbox {{item.r_outline_on}}" wx:for="{{all}}" wx:key="index" catchtap="topbar" data-id="{{item.id-1}}" >
+    {{item.title}}
+    <view class="r-outline {{item.r_outline_on}}"></view>
+  </view>
+</view>

@@ -1,0 +1,154 @@
+/* pages/mine/mine.wxss */
+.contain{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+}
+.top{
+  width: 100%;
+  height: 360rpx;
+  background-color: #FF4001;
+  border-bottom-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;                                         
+  border: 1rpx solid transparent;
+}
+.top-div{
+  width: 94%;
+  height: 400rpx;
+  margin: auto;
+}
+.top-box{
+  height: 400rpx;
+}
+.head-img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head-img>image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.top-div-1st{
+  display: flex;
+}
+.id-box{
+  display: flex;
+  font-size: 22rpx;
+  color: #fff;
+}
+.id-btn{
+  background-color: #FF8862;
+  border-radius: 20rpx;
+  margin-left: 10rpx;
+  font-size: 20rpx;
+  color: #fff;
+
+}
+.name-text{
+  color: #fff;
+  font-weight: 700;
+  line-height: 70rpx;
+}
+.sjx{
+  width: 0;
+  height: 0;
+  border: 6rpx solid transparent;
+  border-top: 6rpx solid #F9DAA5;
+  margin: auto;
+}
+.ewm-text{
+  font-size: 20rpx;
+  background-color: #F9DAA5;
+  border-radius: 20rpx;
+  padding: 4rpx;
+  text-align: center;
+  margin-top: 22rpx;
+}
+.ewm-img{
+  font-size: 50rpx;
+  color: white;
+  width: 50rpx;
+  margin: auto;
+}
+.name-outbox{
+  width: 460rpx;
+}
+.ewm-outbox{
+  float: right;
+}
+.top-div-2nd{
+  display: flex;
+  margin-top: 30rpx;
+}
+.top-2nd-view{
+  width: 25%;
+  height: 90rpx;
+}
+.top-2nd-view-text1{
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+.top-2nd-view-text2{
+  color: #fff;
+  text-align: center;
+  font-size: 24rpx;
+}
+.top-div-3rd{
+  height: 130rpx;
+  width: 100%;
+  border-radius: 16rpx;
+  background-color: #FFFFFF;
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.top-3rd-view{
+  height: 90rpx;
+  display: flex;
+}
+.top-3rd-imgbox{
+  margin-left: 30rpx;
+}
+.top-3rd-imgbox>image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.top-3rd-text1{
+  font-size: 28rpx;
+}
+.top-3rd-text2{
+  font-size: 22rpx;
+  color: #FD581D;
+}
+.top-3rd-text-box{
+  margin-left: 10rpx;
+}
+.nav{
+  height: 180rpx;
+  width: 94%;
+  margin: auto;
+  background-color: #fff;
+  margin-top: 26rpx;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav>view{
+  text-align: center;
+  font-size: 26rpx;
+  width: 20%;
+}
+.nav-text-img{
+  font-weight: 150rpx;
+  margin-bottom: 20rpx;
+  font-size: 40rpx;
+}

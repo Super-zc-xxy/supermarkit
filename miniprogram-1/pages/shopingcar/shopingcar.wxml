@@ -1,0 +1,121 @@
+<!--pages/shopingcar/shopingcar.wxml-->
+<!-- 空购物车 -->
+<view class="mox"> 
+<view class="emptyCar" wx:if="{{carlist.length == 0}}">
+  <view class="car-radio">
+    <view class="iconfont icon-3 car-img"></view>
+  </view>
+  <view class="empty-tis-text">购物车还是空的</view>
+  <view class="empty-tis-btn" bindtap="toindex">到小米商城逛逛</view>
+</view>
+<view class="fullCar" wx:if="{{carlist.length != 0}}">
+  <view class="finish-box">
+    <view class="finish" bindtap="bianjis">{{bianji}}</view>
+  </view>
+  <view class="fullCar-contain">
+    <view class="fullCar-contain-item" wx:for="{{carlist}}" wx:for-index="index" wx:key="index">
+      <view class="checkbox-outbox">
+        <view class="checkbox {{carlist[index].checkedd}}" bindtap="checkbox" data-index="{{index}}">
+          <view class="iconfont icon-check"></view>
+        </view>
+      </view>
+      <image src="{{carlist[index].img1}}" class="item-img"></image>
+      <view class="fullCar-contain-rightbox">
+        <view class="items-name">{{carlist[index].titlename}}</view>
+        <view class="outbox-items-type">
+          <view class="items-type" bindtap="typebox" data-index="{{index}}">{{carlist[index].typeArray[0].typetext}}
+            <view class="iconfont icon-xialajiantou"></view>
+          </view>
+        </view>
+        <view class="price-box">
+          <view>
+            <text class="dollar">￥</text>
+            <text class="dollar-num">{{carlist[index].nowprice}}</text>
+            <text class="del-text" wx:if="{{carlist[index].oldprice != ''}}">
+              <text>￥</text>
+              <text>{{carlist[index].oldprice}}</text>
+            </text>
+          </view>
+        </view>
+        <view class="num-change">
+          <view class="iconfont icon-jian {{carlist[index].jianType}}" bindtap="jian" data-index="{{index}}"></view>
+          <input type="text" model:value="{{carlist[index].prtnum}}" class="num-input" bindblur="numchange"
+            data-index="{{index}}" />
+          <view class="iconfont icon-jia {{carlist[index].jiaType}}" bindtap="jia" data-index="{{index}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="shopCar-bottom" wx:if="{{judge == true}}">
+    <view class="allcheck">
+      <view class="checkbox-outbox">
+        <view class="checkbox {{allcheck}}" bindtap="allcheck">
+          <view class="iconfont icon-check"></view>
+        </view>
+      </view>
+      <view bindtap="allcheck">全选</view>
+    </view>
+    <view class="shopCar-del" bindtap="delcheck">删除</view>
+  </view>
+  <view class="shopCar-bottom" wx:if="{{judge == false}}">
+    <view class="allcheck">
+      <view class="checkbox-outbox">
+        <view class="checkbox {{allcheck}}" bindtap="allcheck">
+          <view class="iconfont icon-check"></view>
+        </view>
+      </view>
+      <view bindtap="allcheck">全选</view>
+    </view>
+    <view class="shopCar-bottom-buy">
+      <view>
+        <text>合计：<text class="dollar">￥</text></text>
+        <text class="allprice-1">{{allprice}}<text class="dollar">.00</text></text>
+      </view>
+      <view class="buy-btn" bindtap="topay">结算（{{allnum}}）</view>
+    </view>
+  </view>
+</view>
+<view class="shadow-tis {{shadowtis}}">已达到最大购买数量</view>
+<view class="del-tis-box" wx:if="{{delbox}}">
+  <view class="del-tis">
+    <text>确定删除所选商品吗？</text>
+    <view class="del-tis-btn">
+      <view class="quxiao-btn" bindtap="cancel">取消</view>
+      <view class="queding-btn" bindtap="sure">确定</view>
+    </view>
+  </view>
+</view>
+<view class="del-tis-box " wx:if="{{typeshadow}}">
+  <view class="del-tis xiangqing">
+    <view class="img-box1st">
+      <image src="{{img}}"></image>
+      <view class="type-textbox">
+        <view class="tprice">
+          <view>
+            <text class="type-text1">￥{{nowprice}}</text>
+          </view>
+          <view wx:if="{{oldprice != ''}}">
+            <text class="type-text2">￥{{oldprice}}</text>
+          </view>
+        </view>
+        <view class="type-text3"> {{prtName}} {{style}}</view>
+      </view>
+    </view>
+    <view class="btn-outbox-1" wx:for="{{xpshopx}}" wx:for-index="index" wx:key="index">
+      <view class="type-box2">{{xpshopx[index].typename}}</view>
+      <view class="typelist-outbox">
+        <view class="type-box1  {{item == xpshopx[index].typetext ? 'type-box1-on' :  ''}}"
+          wx:for="{{item.typetextArray}}" wx:for-index="index1" wx:key="index1" bindtap="typeon"
+          data-index1="{{index1}}" data-index="{{index}}">{{item}}</view>
+      </view>
+    </view>
+    <view class="btn-outbox">
+      <view class="btn-xq" bindtap="typesure">确定</view>
+    </view>
+    
+  </view>
+</view>
+</view>
+<!-- <view class="checkbox {{checked}}" bindtap="checkbox">
+  <view class="iconfont icon-check"></view>
+</view> -->

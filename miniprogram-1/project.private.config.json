@@ -1,0 +1,60 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shopingcar/shopingcar",
+          "pathName": "pages/shopingcar/shopingcar",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/waitpay/waitpay",
+          "pathName": "pages/waitpay/waitpay",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/species/species",
+          "pathName": "pages/species/species",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/address/address",
+          "pathName": "pages/address/address",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shop/shop",
+          "pathName": "pages/shop/shop",
+          "query": "faddish=%7B%22img1%22%3A%22%2Fstatic%2Fswiper%2Fsp1.png%22%2C%22title%22%3A%22test1%22%2C%22produce%22%3A%22%E8%BF%99%E6%98%AF%E4%BB%8B%E7%BB%8D%22%2C%22price%22%3A%2299%22%2C%22state%22%3A%222%22%7D",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

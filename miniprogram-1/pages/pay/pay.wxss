@@ -1,0 +1,125 @@
+/* pages/pay/pay.wxss */
+.contain{
+  height: 100vh;
+  background-color: #99999950;
+  overflow: hidden;
+}
+.size-img{
+  background-color: #FF681D;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 20rpx;
+}
+.dizhi{
+  font-size: 50rpx;
+}
+.tip-size{
+  background-color: #fff;
+  width: 94%;
+  margin: auto;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+  height: 240rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.size-text{
+  font-size: 28rpx;
+}
+.box1{
+  background-color: #fff;
+  border-radius: 20rpx;
+  width: 94%;
+  margin: auto;
+  margin-top: 30rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box1 image{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #999;
+  margin-left: 20rpx;
+}
+.allnumbox{
+  display: flex;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+  align-items: center;
+}
+.jiantou{
+  font-size: 23rpx;
+}
+.img-box{
+  display: flex;
+  align-items: center;
+  width: 520rpx;
+  overflow: scroll;
+}
+.box2{
+  background-color: #fff;
+  border-radius: 20rpx;
+  width: 94%;
+  margin: auto;
+  margin-top: 30rpx;
+}
+.box2-item1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #99999910;
+}
+.box2-item1{
+  margin: 0 20rpx;
+}
+.box2-right-view{
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+.box2-right-view>view{
+  margin: 0rpx 10rpx;
+}
+.topay{
+  line-height: 70rpx;
+  font-size: 28rpx;
+  width: 200rpx;
+  background-color: #FF681D;
+  border-radius: 40rpx;
+  color: #fff;
+  text-align: center;
+}
+.bottom-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 30rpx;
+}
+.bottom-box>view{
+  margin: 0rpx 30rpx; 
+}
+.numbox{
+  display: flex;
+  font-size: 28rpx;
+}
+.sptext{
+  font-size: 32rpx;
+  color: #FF681D;
+  font-weight: 700;
+}

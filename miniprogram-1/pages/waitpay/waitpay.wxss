@@ -1,0 +1,141 @@
+/* pages/waitpay/waitpay.wxss */
+.top-nav{
+  display: flex;
+  justify-content: space-around;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  background-color: #fff;
+}
+.contain-box{
+  height: 100vh;
+  background-color: rgba(153, 153, 153, 0.2);
+}
+.back{
+  height: 60rpx;
+  padding-top: 110rpx;
+  background-color: #fff;
+  width: 100%;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+  text-indent: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top-nav>view{
+  padding: 0rpx 20rpx;
+}
+.outline{
+  width: 40rpx;
+  border-bottom: 4rpx solid transparent;
+  margin: auto;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.outline-on{
+  border-bottom: 4rpx solid #FF681D;
+}
+.allfromisnone{
+  height: 1200rpx;
+  background-color: rgba(153, 153, 153, 0.2);
+  overflow: hidden;
+}
+.nonefrom-img{
+  width: 300rpx;
+  height: 300rpx;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(153, 153, 153, 0.5);
+  border-radius: 50%;
+  margin-top: 140rpx;
+}
+.nonefrom-img1{
+  font-size: 160rpx;
+  color: #999;
+}
+.goshop-btn{
+  line-height: 100rpx;
+  width: 80%;
+  margin: auto;
+  color: #fff;
+  background-color: #FF681D;
+  margin-top: 20rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 1rpx solid #cc5519;
+}
+.nofrom-tis{
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.waitpay{
+  height: 1360rpx;
+  background-color: rgba(153, 153, 153, 0.2);
+  overflow: scroll;
+}
+.waitpay-items-box1>image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  background-color: #999;
+
+}
+.waitpay-items{
+  width: 94%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.waitpay-items-box1{
+  display: flex;
+  margin-top: 80rpx;
+  margin-left: 30rpx;
+}
+.items-state{
+  color: #FF681D;
+  font-size: 28rpx;
+  margin: 20rpx;
+  position: absolute;
+  right: 20rpx;
+}
+.shopname{
+  width: 280rpx;
+}
+.items-box1-right{
+  width: 430rpx;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 28rpx;
+  margin-left: 30rpx;
+}
+.num{
+  position: absolute;
+  right: 0;
+  color: #999;
+  
+}
+.allprice{
+  display: flex;
+  justify-content: right;
+  font-size: 30rpx;
+  position: absolute;
+  right: 20rpx;
+}
+.allprice-price{
+  color: #999;
+  margin-right: 20rpx;
+}
+.shopname-1{
+  color: #999;
+  font-size: 24rpx;
+}
