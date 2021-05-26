@@ -27,14 +27,6 @@ Page({
         name:'张超',//收货人名称
         etailed:'阿巴',//详细地址
       },
-      {
-        phone:'17398893373',//电话
-        procince:'4434',//省编号
-        city:'4434',//城市编号
-        area:'4434',//区县编号
-        name:'张超',//收货人名称
-        etailed:'阿巴',//详细地址
-      }
     ]
   },
   // 返回上一个页面
@@ -67,9 +59,9 @@ Page({
   },
   //地址返回
   addres_back() {
-    this.data.addresstate = false;
+    this.data.addressstate = false;
     this.setData({
-      shopaddress: this.data.addressstate
+      addressstate: this.data.addressstate
     })
   },
   //地址跳转
@@ -131,7 +123,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -142,6 +133,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let _that = this;
+    req.req("userAddressList",function(res){
+      _that.setData({
+        user :  res
+      })
+      console.log(_that.data.user);
+    },{
+      token:app.data.token
+    })
     setTimeout(() => {
       this.setData({
         itemArray: app.xq_item
@@ -160,6 +160,7 @@ Page({
     var xq_list = []
     var xq_list1 = []
     var xq_list2 = []
+    var _this = this
     req.req('goodInfo', function (res) {
       console.log(res);
       var test = JSON.parse(JSON.parse(res.info[0].edition));
@@ -178,6 +179,9 @@ Page({
       app.xq_item.imgArray = xq_list1
       app.xq_item.intrArray = xq_list2
       app.xq_item.typeArray = xq_list
+      _this.setData({
+        itemArray:_this.data.itemArray
+      })
     }, {
       good_id: app.xq_item.id,
       size: 10000

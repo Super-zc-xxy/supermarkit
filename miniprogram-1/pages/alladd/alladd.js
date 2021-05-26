@@ -1,45 +1,42 @@
-// pages/pay/pay.js
-const app=getApp();
-const req = require('../../utils/dataReq');
+// pages/alladd/alladd.js
+const app = getApp();
+const req = require('../../utils/dataReq')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    nums:'',
-    AllPrice:'',
-    carlist:'',
+    // 存放地址数据
+    addinfo:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var datalist = JSON.parse(options.list)
-    this.setData({
-      carlist:datalist
-    })
-    this.start();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    req.req("userAddressList",function(res){
-      console.log(res);
-    },{
-      token:app.data.token
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    let _this = this
+    req.req("userAddressList",function(res){
+      _this.setData({
+        addinfo:res
+      })
+      console.log(_this.data.addinfo);
+    },{
+      token:app.data.token
+    })
   },
 
   /**
@@ -75,17 +72,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  start(){
-    var nums = 0;
-    var price = 0;
-    for(let i = 0; i < this.data.carlist.length; i++){
-      nums += this.data.carlist[i].prtnum-0;
-      price += (this.data.carlist[i].nowprice-0)*(this.data.carlist[i].prtnum-0);      
-    }
-    this.setData({
-      nums:nums,
-      AllPrice:price
-    })
-  },
+  }
 })

@@ -1,0 +1,17 @@
+<!--pages/alladd/alladd.wxml-->
+<!-- 显示地址数据 -->
+<radio-group>
+  <view class="addres_info" wx:for="{{addinfo}}" wx:key="index">
+  <view class="info_header">
+    <view class="info_name">{{item.name}}</view>
+    <view >{{item.phone}}</view>
+  </view>
+  <view class="info_addres">{{item.procince}}+{{item.detailed}}</view>
+  <view class="hr"></view>
+  <view class="moren">
+    <radio name="address" class="radio">设为默认地址</radio>
+    <view class="delet">删除</view>
+    <view class="change">编辑</view>
+  </view>
+</view>
+</radio-group>

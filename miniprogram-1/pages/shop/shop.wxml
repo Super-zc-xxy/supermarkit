@@ -99,7 +99,7 @@
       <view class="radio iconfont icon-zhizhen"></view>
       <view class="user_info">
         <view class="user_title">{{item.name}}</view>
-        <view class="user_address">{{item.procince}}{{span}}{{item.city}}{{item.area}}{{item.etailed}}</view>
+        <view class="user_address">{{item.procince}}{{item.detailed}}</view>
       </view>
       <view class="user_gou iconfont {{icon}}"></view>
     </view>

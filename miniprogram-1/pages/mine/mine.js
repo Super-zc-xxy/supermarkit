@@ -13,6 +13,12 @@ Page({
     canIUseGetUserProfile: false,
   },
 
+  //地址跳转
+  addres(){
+    wx.navigateTo({
+      url: '../alladd/alladd',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
