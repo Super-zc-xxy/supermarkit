@@ -17,7 +17,6 @@ Page({
   onLoad: function (options) {
     var that = this;
     var datalist = JSON.parse(options.list)
-    console.log(datalist);
     this.setData({
       carlist:datalist
     })
@@ -28,9 +27,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // this.setData({
-    //   carlist:app.data.s
-    // })
+
   },
 
   /**

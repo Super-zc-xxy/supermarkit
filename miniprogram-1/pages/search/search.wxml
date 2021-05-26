@@ -1,0 +1,19 @@
+<!--pages/search/search.wxml-->
+<!-- 搜索 -->
+<view class="search">
+  <view class="search-input">
+    <view class="iconfont icon-sousuo icon"></view>
+    <input type="text" placeholder="搜索商品" placeholder-class="placeholder" model:value="{{input}}"/>
+  </view>
+  <view class="search_button" catchtap="search" data-input="{{input}}">搜索</view>
+</view>
+<!-- 显示搜索内容 -->
+<view class="search_info">
+  <view wx:for="{{searchinfo.data}}" wx:key="index" class="shopinfo" catchtap="xp" data-index="{{index}}">
+    <image src="{{item.img}}"></image>
+    <view class="info">
+      <view>{{item.good_name}}</view>
+      <view class="price">￥{{item.price}}</view>
+    </view>
+  </view>
+</view>

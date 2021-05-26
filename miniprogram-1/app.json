@@ -11,7 +11,8 @@
     "pages/shop/shop",
     "pages/address/address",
     "pages/species/species",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/search/search"
   ],
   "tabBar": {
     "color": "#000000",  

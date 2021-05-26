@@ -110,6 +110,12 @@ Page({
     })
     app.xq_item = this.data.xp_shoplist[idx]
   },
+  //搜索跳转
+  search(){
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -270,14 +276,13 @@ Page({
         }
       }
       app.data.shoparray = shoparray;
+      app.data.all_list = newlist;
       _this.setData({
         xp_shoplist: list,
         bk_shoplist: bk_list,
         lunbo_item: lunbo_item,
         all: app.data.shoparray
       })
-      
-
     }, {
       page: 1,
       size: 10000
@@ -297,10 +302,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      all: app.data.shoparray
-    })
-
+    
   },
 
   /**

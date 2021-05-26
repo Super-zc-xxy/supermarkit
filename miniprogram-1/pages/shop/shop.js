@@ -13,6 +13,29 @@ Page({
     itemArray: '',
     shopbuystate: '',
     shopcarnum: '',
+    shopuser:[],
+    addressstate:false,
+    shopaddress:false,
+    // 选中
+    icon:'icon-icon-test1',
+    user:[
+      {
+        phone:'17398893373',//电话
+        procince:'4434',//省编号
+        city:'4434',//城市编号
+        area:'4434',//区县编号
+        name:'张超',//收货人名称
+        etailed:'阿巴',//详细地址
+      },
+      {
+        phone:'17398893373',//电话
+        procince:'4434',//省编号
+        city:'4434',//城市编号
+        area:'4434',//区县编号
+        name:'张超',//收货人名称
+        etailed:'阿巴',//详细地址
+      }
+    ]
   },
   // 返回上一个页面
   back() {
@@ -33,21 +56,20 @@ Page({
   },
   //地址弹框
   addres() {
-    if (this.data.shopuser.length > 0) {
-      this.data.shop.shopaddresstate = false;
-    } else {
-      this.data.shop.shopaddresstate = true;
+    if(app.data.addressinfo.length !=0){
+      this.setData({
+        shopaddress:false
+      })
     }
     this.setData({
-      shopaddres: this.data.shop,
-      shopaddress: this.data.shop.shopaddress
+      addressstate:true,
     })
   },
   //地址返回
   addres_back() {
-    this.data.shop.shopaddresstate = false;
+    this.data.addresstate = false;
     this.setData({
-      shopaddres: this.data.shop.shopaddresstate
+      shopaddress: this.data.addressstate
     })
   },
   //地址跳转
@@ -109,7 +131,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
 
   },
   /**
