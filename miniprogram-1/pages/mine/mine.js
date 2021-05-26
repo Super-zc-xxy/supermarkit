@@ -11,14 +11,21 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUseGetUserProfile: false,
+    login:'',
+    name:'',
+    icon:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.data.login);
     this.setData({
       token: app.data.token,
+      login: app.data.login,
+      name: app.data.name,
+      icon: app.data.icon,
     })
     if (wx.getUserProfile) {
       this.setData({

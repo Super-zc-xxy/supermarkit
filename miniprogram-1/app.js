@@ -17,6 +17,7 @@ App({
     userInfo: null
   },
   data: {
+    login:false,
     code:'',
     nickname:'',
     name:'',
