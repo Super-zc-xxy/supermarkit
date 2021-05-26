@@ -74,6 +74,12 @@
         <view class="iconfont icon-jia"></view>
       </view>
     </view>
+    <view class="outbox-1-r" wx:for="{{itemArray.typeArray}}" wx:for-index="index1" wx:key="index">
+      <view class="typename-r">{{item.typename}}</view>
+      <view class="typetextArray-box">
+        <view class="typetextArray-box-item  {{item == itemArray.typeArray[index1].typetext ? 'type-box1-on' :  ''}}" wx:for="{{item.typetextArray}}" wx:for-index="index" wx:key="index" bindtap="type_change" data-index1="{{index1}}" data-index="{{index}}">{{item}}</view>
+      </view>
+    </view>
     <view class="shop-buy-2">
       <view class="shop-buy-2-1" bindtap="addshopcar">加入购物车</view>
       <view class="shop-buy-2-2" bindtap="buynow">立即购买</view>

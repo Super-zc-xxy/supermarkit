@@ -59,6 +59,7 @@ Page({
     fixedinput: '',
     over_nav: '',
     xp_item: '',
+    lunbo_item:'',
   },
 
   topbar: function (e) {
@@ -81,7 +82,11 @@ Page({
   },
   //调用函数
   xiangqin(e) {
-    this.faddish(e, this.data.shoplist)
+    var idx = e.currentTarget.dataset.faddish
+    wx.navigateTo({
+      url: '../shop/shop',
+    })
+    app.xq_item = this.data.lunbo_item[idx]
   },
   //调用爆款详情
   bk(e) {
@@ -91,7 +96,7 @@ Page({
     })
     app.xq_item = this.data.bk_shoplist[idx]
   },
-  //调用新品好物
+  //调用新品好物 
   xp(e) {
     var idx = e.currentTarget.dataset.faddish
     wx.navigateTo({
@@ -147,6 +152,10 @@ Page({
       },
     ]
     var newlist = [];
+    var list = []
+    var _this = this;
+    var bk_list = [];
+    var lunbo_item = [];
     req.req('goodList', function (res) {
       var alllist = []; //原数据
       for (let i = 0; i < res.data.length; i++) {
@@ -244,14 +253,34 @@ Page({
             break;
         }
       }
+      for (let i = 0; i < 6; i++) {
+        list.push(newlist[i])
+      }
+      for (let i = 0; i < newlist.length; i++) {
+        if (newlist[i].typestate == '爆款') {
+          bk_list.push(newlist[i])
+        }
+      }
+      for (let i = 0; i < newlist.length; i++) {
+        if (newlist[i].typestate == '爆款') {
+          lunbo_item.push(newlist[i])
+        }
+      }
+
       // console.log(shoparray);
-      app.data.shoparray = shoparray
+      app.data.shoparray = shoparray;
+
     }, {
       page: 1,
       size: 10000
     })
-
-
+    setTimeout(function () {
+      _this.setData({
+        xp_shoplist: list,
+        bk_shoplist: bk_list,
+        lunbo_item: lunbo_item,
+      })
+    }, 500)
 
 
   },
@@ -260,20 +289,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    for (let i = 0; i < this.data.all.length; i++) {
-      for (let j = 0; j < this.data.all[i].shoplist.length; j++) {
-        if (this.data.all[i].shoplist[j].typestate == '新品') {
-          this.data.xp_shoplist.push(this.data.all[i].shoplist[j])
-        }
-        if (this.data.all[i].shoplist[j].typestate == '爆款') {
-          this.data.bk_shoplist.push(this.data.all[i].shoplist[j])
-        }
-      }
-    }
-    this.setData({
-      bk_shoplist: this.data.bk_shoplist,
-      xp_shoplist: this.data.xp_shoplist
-    })
+
   },
 
   /**

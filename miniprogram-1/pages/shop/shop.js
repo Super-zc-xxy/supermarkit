@@ -42,7 +42,6 @@ Page({
       shopaddres: this.data.shop,
       shopaddress: this.data.shop.shopaddress
     })
-    console.log(this.data.shop.shopaddresstate);
   },
   //地址返回
   addres_back() {
@@ -141,7 +140,7 @@ Page({
     var xq_list1 = []
     var xq_list2 = []
     req.req('goodInfo', function (res) {
-      // console.log(res);
+      console.log(res);
       var test = JSON.parse(JSON.parse(res.info[0].edition));
       for (let i = 0; i < test.length; i++) {
         var testArray = {};
@@ -151,7 +150,7 @@ Page({
         xq_list.push(testArray)
       }
       for (let i = 0; i < JSON.parse(JSON.parse(res.info[0].imgs)).length; i++) {
-        xq_list1.push(JSON.parse(JSON.parse(res.info[0].imgs))[0])
+        xq_list1.push(JSON.parse(JSON.parse(res.info[0].imgs))[i])
       }
       xq_list2 = JSON.parse(JSON.parse(res.info[0].info))[0].split('，')
       app.xq_item.produce = xq_list2[0]
@@ -234,6 +233,14 @@ Page({
     })
     this.setData({
       shopbuystate: false
+    })
+  },
+  type_change(e){
+    var idx = e.currentTarget.dataset.index;
+    var idx1 = e.currentTarget.dataset.index1;
+    this.data.itemArray.typeArray[idx1].typetext = this.data.itemArray.typeArray[idx1].typetextArray[idx]
+    this.setData({
+      itemArray:this.data.itemArray
     })
   },
 })

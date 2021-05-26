@@ -380,3 +380,31 @@ page{
   top: 0;
   right: 0;
 }
+.outbox-1-r{
+  width: 94%;
+  margin: auto;
+  margin-top: 100rpx;
+  
+}
+.typename-r{
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.typetextArray-box{
+  display: flex;
+  width: 100%;
+  margin-top: 40rpx;
+}
+.typetextArray-box-item{
+  border-radius: 30rpx;
+  margin: 0rpx 20rpx;
+  background-color: #F5F5F5;
+  font-size: 26rpx;
+  padding: 5rpx 20rpx;
+  border: 1px solid transparent;
+}
+.type-box1-on{
+  border: 1px solid #FF681D;
+  background-color: #F5F5F5;
+  color: #FF681D;
+}
