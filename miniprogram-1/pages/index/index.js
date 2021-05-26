@@ -59,13 +59,13 @@ Page({
     fixedinput: '',
     over_nav: '',
     xp_item: '',
-    lunbo_item:'',
+    lunbo_item: '',
 
     // userInfo: {},
     // hasUserInfo: false,
     // canIUseGetUserProfile: false,
-    open_id:'',
-    code:'',
+    open_id: '',
+    code: '',
   },
 
   topbar: function (e) {
@@ -111,7 +111,7 @@ Page({
     app.xq_item = this.data.xp_shoplist[idx]
   },
   //搜索跳转
-  search(){
+  search() {
     wx.navigateTo({
       url: '../search/search',
     })
@@ -170,6 +170,7 @@ Page({
     var lunbo_item = [];
     req.req('goodList', function (res) {
       var alllist = []; //原数据
+      
       for (let i = 0; i < res.data.length; i++) {
         if (res.data[i].good_name.indexOf('zc') != -1) {
           alllist.push(res.data[i])
@@ -302,7 +303,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
@@ -381,22 +382,36 @@ Page({
         app.data.code = res.code;
         req.req('codeExchangeOpenid', function (res) {
           app.data.open_id = res.openid;
-          if(res.info != undefined){
-            app.data.token = res.info.token
-            // req.req('shoppingCarList', function (res) {
-            //   console.log(res);
-            // }, {
-            //   token: app.data.token
-            // })
+          if (res.info != undefined) {
+            app.data.token = res.info.token;
+            app.data.name = res.info.nick_name;
+            app.data.icon = res.info.icon;
+            app.data.login = true;
+            console.log(app.data.token);
+            req.req('shoppingCarList', function (res) {
+              console.log(res.data);
+              var shopcarlist = []
+              for (let i = 0; i < res.data.length; i++) {
+                for(let j = 0; j < app.data.all_list.length; j++){
+                  if(app.data.all_list[j].id == res.data[i].good_id){
+
+                    shopcarlist.push(app.data.all_list[j])
+                  }
+                }
+              }
+              app.data.shopcarlist = shopcarlist
+              console.log(app.data.all_list);
+            }, {
+              token: app.data.token
+            })
             // req.req('orderList', function (res) {
             //   console.log(res);
             // }, {
             //   token: app.data.token
             // })
-          }else{
+          } else {
             console.log('未注册');
           }
-         console.log(res);
         }, {
           code: res.code
         })

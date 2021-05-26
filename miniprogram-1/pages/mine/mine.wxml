@@ -3,8 +3,8 @@
     <view class="top">
       <view class="top-div">
 
-        <view class="top-div-1st"  wx:if="{{!hasUserInfo}}">
-          <view class="ttoutbox" wx:if="{{!hasUserInfo}}">
+        <view class="top-div-1st"  wx:if="{{!login}}">
+          <view class="ttoutbox" wx:if="{{!login}}">
             <button class="ttoutbox" bindtap="getUserProfile"> 登录 </button>
           </view>
           <view class="name-outbox" >
@@ -16,13 +16,13 @@
             <view class="iconfont icon-ico ewm-img"></view>
           </view>
         </view>
-        <view class="top-div-1st" wx:if="{{hasUserInfo}}">
+        <view class="top-div-1st" wx:if="{{login}}">
 
           <view class="head-img">
-            <image src="{{userInfo.avatarUrl}}"></image>
+            <image src="{{icon}}"></image>
           </view>
           <view class="name-outbox">
-            <text class="name-text">{{userInfo.nickName}}</text>
+            <text class="name-text">{{name}}</text>
           </view>
           <!-- right-img -->
           <view class="ewm-outbox">

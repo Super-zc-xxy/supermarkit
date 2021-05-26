@@ -160,7 +160,7 @@ Page({
     var xq_list = []
     var xq_list1 = []
     var xq_list2 = []
-    var _this = this
+    var _this = this;
     req.req('goodInfo', function (res) {
       console.log(res);
       var test = JSON.parse(JSON.parse(res.info[0].edition));
@@ -225,6 +225,14 @@ Page({
   },
   addshopcar() {
     // app.data.shopcarlist
+    var shopcaritem ={};
+    shopcaritem.token = app.data.token;
+    shopcaritem.good_id = this.data.itemArray.id;
+    shopcaritem.num = this.data.itemArray.prtnum;
+    shopcaritem.price = this.data.itemArray.nowprice-0;
+    shopcaritem.money = (this.data.itemArray.nowprice)*(this.data.itemArray.prtnum);
+    shopcaritem.sku = JSON.stringify(this.data.itemArray.typeArray);
+    
     var jdge = false;
     for (let i = 0; i < app.data.shopcarlist.length; i++) {
       if (this.data.itemArray.id == app.data.shopcarlist[i].id) {
@@ -249,6 +257,10 @@ Page({
     this.setData({
       shopbuystate: false
     })
+    console.log(shopcaritem);
+    req.req('shoppingCarAddModify', function (res) {
+      console.log(res);
+    }, shopcaritem)
   },
   buynow() {
     var sendlist = [];
