@@ -10,7 +10,8 @@
     "pages/user/user",
     "pages/shop/shop",
     "pages/address/address",
-    "pages/species/species"
+    "pages/species/species",
+    "pages/login/login"
   ],
   "tabBar": {
     "color": "#000000",  

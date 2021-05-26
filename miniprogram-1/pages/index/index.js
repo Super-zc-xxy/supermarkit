@@ -60,6 +60,12 @@ Page({
     over_nav: '',
     xp_item: '',
     lunbo_item:'',
+
+    // userInfo: {},
+    // hasUserInfo: false,
+    // canIUseGetUserProfile: false,
+    open_id:'',
+    code:'',
   },
 
   topbar: function (e) {
@@ -226,11 +232,8 @@ Page({
         newlist_item.checked = false;
         newlist_item.checkedd = '';
         newlist_item.prtnum = 1;
-
-
         newlist.push(newlist_item)
       }
-      console.log(newlist);
       for (let i = 0; i < newlist.length; i++) {
         switch (newlist[i].state) {
           case '烟':
@@ -266,22 +269,20 @@ Page({
           lunbo_item.push(newlist[i])
         }
       }
-
-      // console.log(shoparray);
       app.data.shoparray = shoparray;
+      _this.setData({
+        xp_shoplist: list,
+        bk_shoplist: bk_list,
+        lunbo_item: lunbo_item,
+        all: app.data.shoparray
+      })
+      
 
     }, {
       page: 1,
       size: 10000
     })
-    setTimeout(function () {
-      _this.setData({
-        xp_shoplist: list,
-        bk_shoplist: bk_list,
-        lunbo_item: lunbo_item,
-      })
-    }, 500)
-
+    this.login_1();
 
   },
 
@@ -296,12 +297,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    //循环数据，动态添加新数组
-    setTimeout(() => {
-      this.setData({
-        all: app.data.shoparray
-      })
-    }, 500);
+    this.setData({
+      all: app.data.shoparray
+    })
 
   },
 
@@ -374,4 +372,36 @@ Page({
     })
     app.xq_item = this.data.all[this.data.current].shoplist[idx]
   },
+  login_1() {
+    var _this = this;
+    wx.login({
+      success(res) {
+        app.data.code = res.code;
+        req.req('codeExchangeOpenid', function (res) {
+          app.data.open_id = res.openid;
+          if(res.info != undefined){
+            app.data.token = res.info.token
+            // req.req('shoppingCarList', function (res) {
+            //   console.log(res);
+            // }, {
+            //   token: app.data.token
+            // })
+            // req.req('orderList', function (res) {
+            //   console.log(res);
+            // }, {
+            //   token: app.data.token
+            // })
+          }else{
+            console.log('未注册');
+          }
+         console.log(res);
+        }, {
+          code: res.code
+        })
+
+      }
+
+    })
+  }
+
 })

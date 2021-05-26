@@ -2,17 +2,27 @@
   <view class="top-box">
     <view class="top">
       <view class="top-div">
-        <view class="top-div-1st">
+
+        <view class="top-div-1st"  wx:if="{{!hasUserInfo}}">
+          <view class="ttoutbox" wx:if="{{!hasUserInfo}}">
+            <button class="ttoutbox" bindtap="getUserProfile"> 登录 </button>
+          </view>
+          <view class="name-outbox" >
+            <text class="name-text" bindtap="getUserProfile">登录/注册</text>
+          </view>
+          <view class="ewm-outbox">
+            <view class="ewm-text">到店扫码</view>
+            <view class="sjx"></view>
+            <view class="iconfont icon-ico ewm-img"></view>
+          </view>
+        </view>
+        <view class="top-div-1st" wx:if="{{hasUserInfo}}">
+
           <view class="head-img">
-            <image src="../img/sp5.png"></image>
+            <image src="{{userInfo.avatarUrl}}"></image>
           </view>
           <view class="name-outbox">
-            <text class="name-text">RJQ</text>
-            <view class="id-box">
-              <text>小米id：</text>
-              <text>12684684864</text>
-              <view class="id-btn">切换账号</view>
-            </view>
+            <text class="name-text">{{userInfo.nickName}}</text>
           </view>
           <!-- right-img -->
           <view class="ewm-outbox">
@@ -22,6 +32,7 @@
           </view>
 
         </view>
+
         <view class="top-div-2nd">
           <view class="top-2nd-view">
             <view class="top-2nd-view-text1">0</view>
@@ -90,7 +101,7 @@
       <view class="iconfont icon-huaban27 nav-text-img"></view>
       <view>众筹抽奖</view>
     </view>
-    <view  bindtap="waitall">
+    <view bindtap="waitall">
       <view class="iconfont icon-17 nav-text-img"></view>
       <view>全部订单</view>
     </view>

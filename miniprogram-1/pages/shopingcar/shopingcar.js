@@ -6,129 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // carlist: [{
-    //     img: '../img/sp11.png',
-    //     name: '小米蓝牙',
-    //     typetext: '黑色',
-    //     nowprice: '5999',
-    //     oldprice: '6999',
-    //     prtnum: '1',
-    //     jianType: '',
-    //     jiaType: '',
-    //     checked: true,
-    //     checkedd: '',
-    //     sectType: '颜色',
-    //     typelist: [[
-    //       '黑色',
-    //       '绿色',
-    //       '白色'
-    //     ],
-    //     [
-    //       '','','',
-    //     ]
-    //   ],
-    //     typelock:0,
-
-
-    //   },
-    //   {
-    //     img: '../img/sp12.png',
-    //     name: '小米蓝牙123',
-    //     typetext: '黑色-1',
-    //     nowprice: '5999',
-    //     oldprice: '',
-    //     prtnum: '1',
-    //     jianType: '',
-    //     jiaType: '',
-    //     checked: true,
-    //     checkedd: '',
-    //     sectType: '颜色',
-    //     typelist: [[
-    //       '黑色',
-    //       '绿色',
-    //       '白色'
-    //     ],
-    //     [
-    //       '','','',
-    //     ]
-    //   ],
-    //     typeliston: '',
-    //     typelock:0,
-    //   },
-    //   {
-    //     img: '../img/sp13.png',
-    //     name: '小米蓝牙',
-    //     typetext: '黑色',
-    //     nowprice: '5999',
-    //     oldprice: '6999',
-    //     prtnum: '1',
-    //     jianType: '',
-    //     jiaType: '',
-    //     checked: true,
-    //     checkedd: '',
-    //     sectType: '颜色',
-    //     typelist: [[
-    //       '黑色',
-    //       '绿色',
-    //       '白色'
-    //     ],
-    //     [
-    //       '','','',
-    //     ]
-    //   ],
-    //     typeliston: '',
-    //     typelock:0,
-    //   },
-    //   {
-    //     img: '../img/sp14.png',
-    //     name: '小米蓝牙',
-    //     typetext: '黑色',
-    //     nowprice: '568',
-    //     oldprice: '6999',
-    //     prtnum: '1',
-    //     jianType: '',
-    //     jiaType: '',
-    //     checked: true,
-    //     checkedd: '',
-    //     sectType: '颜色',
-    //     typelist: [[
-    //       '黑色',
-    //       '绿色',
-    //       '白色'
-    //     ],
-    //     [
-    //       '','','',
-          
-    //     ]
-    //   ],
-    //     typeliston: '',
-    //     typelock:0,
-    //   },
-    //   {
-    //     img: '../img/sp15.png',
-    //     name: '小米蓝牙',
-    //     typetext: '黑色',
-    //     nowprice: '1999',
-    //     oldprice: '',
-    //     prtnum: '1',
-    //     jianType: '',
-    //     jiaType: '',
-    //     checked: true,
-    //     checkedd: '',
-    //     sectType: '颜色',
-    //     typelist: [[
-    //       '黑色',
-    //       '绿色',
-    //       '白色'
-    //     ],
-    //     [
-    //       '','','',
-    //     ]
-    //   ],
-    //     typeliston: '',
-    //     typelock:0,
-    //   },
-    // ],
     carlist:'',
     shadowtis: '',
     bianji: '编辑',
@@ -145,6 +22,7 @@ Page({
     carindex: '',
     xpshopx:'',
     indexs:0,
+    token:'',
   },
 
   /**
@@ -166,7 +44,8 @@ Page({
    */
   onShow: function () {
     this.setData({
-      carlist:app.data.shopcarlist
+      carlist:app.data.shopcarlist,
+      token:app.data.token,
     })
     this.atbegin(false, 'checked');
     this.allNums();

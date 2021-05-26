@@ -48,6 +48,7 @@
   margin-left: 10rpx;
   font-size: 20rpx;
   color: #fff;
+  padding: 4rpx 10rpx;
 
 }
 .name-text{
@@ -78,6 +79,10 @@
 }
 .name-outbox{
   width: 460rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
 }
 .ewm-outbox{
   float: right;
@@ -151,4 +156,17 @@
   font-weight: 150rpx;
   margin-bottom: 20rpx;
   font-size: 40rpx;
+}
+.head-img-1{
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.ttoutbox{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
 }

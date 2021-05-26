@@ -17,9 +17,15 @@ App({
     userInfo: null
   },
   data: {
+    code:'',
+    nickname:'',
+    name:'',
+    pw:'',
+    icon:'',
+    open_id:'',
     speciesindex: 0, //用于判断'分类'页面进入时左边高亮情况
     xq_item: '', //详情页面数组
-
+    token:'',//判断是否登录
     shoparray:[],
     shopcarlist: [
       {
