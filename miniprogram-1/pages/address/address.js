@@ -1,4 +1,6 @@
 // pages/address/address.js
+const app = getApp();
+const req = require('../../utils/dataReq')
 Page({
 
   /**
@@ -11,7 +13,8 @@ Page({
     chooseAddress: '',
     moreaddress: '',
     addressstate: false,
-    userinfo: []
+    userinfo: [],
+    shopaddresstate:''
   },
   //返回上一级
   back() {
@@ -50,7 +53,6 @@ Page({
           moreaddress: this.data.moreaddress,
           addressstate: this.data.addressstate
         })
-        console.log(this.data.userinfo);
         state = true;
       }else{
        wx.showModal({
@@ -62,12 +64,14 @@ Page({
         wx.navigateBack({
           delta: 1,
         })
+        app.data.addressinfo.push(this.data.userinfo)
       }
     },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.data.addressinfo);
   },
 
   /**

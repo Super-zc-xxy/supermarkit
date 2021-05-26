@@ -104,6 +104,12 @@ Page({
     })
     app.xq_item = this.data.xp_shoplist[idx]
   },
+  //搜索跳转
+  search(){
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -269,7 +275,7 @@ Page({
 
       // console.log(shoparray);
       app.data.shoparray = shoparray;
-
+      app.data.all_list = newlist;
     }, {
       page: 1,
       size: 10000

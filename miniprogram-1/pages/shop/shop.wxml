@@ -87,13 +87,21 @@
   </view>
 </view>
 <!-- 这是地址页面 -->
-<view class="shop-addres" wx:if="{{shopaddres}}">
+<view class="shop-addres" wx:if="{{addressstate}}">
   <view class="shop-body-1">
     <view class="iconfont icon-quxiao shop-body-back" catchtap="addres_back"></view>
     <view class="shop-addres-1">收货地址</view>
-    <view class="shop-addres-2" wx:if="{{shopaddress == false}}">
+    <view class="shop-addres-2" wx:if="{{shopaddress}}">
       <view class="iconfont icon-iconfontdizhi addres-logo"></view>
       <view class="address-p">还没有收货地址，快去添加吧！</view>
+    </view>
+    <view class="address_info" wx:for="{{user}}" wx:key="index">
+      <view class="radio iconfont icon-zhizhen"></view>
+      <view class="user_info">
+        <view class="user_title">{{item.name}}</view>
+        <view class="user_address">{{item.procince}}{{span}}{{item.city}}{{item.area}}{{item.etailed}}</view>
+      </view>
+      <view class="user_gou iconfont {{icon}}"></view>
     </view>
     <view class="address-button" catchtap="addnewaddress">
         <view class="address-button-1">新增地址</view>

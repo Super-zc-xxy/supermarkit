@@ -4,7 +4,7 @@
   <image src="/static/logo.jpg"></image>
   <view class="input-box-r">
     <view class="iconfont icon-sousuo input-img"></view>
-    <input class="head-input" type="text" placeholder=" 搜索超市商品" />
+    <input class="head-input" type="text" placeholder=" 搜索超市商品" catchtap="search"/>
   </view>
 
 </view>

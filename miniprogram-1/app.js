@@ -17,9 +17,10 @@ App({
     userInfo: null
   },
   data: {
+    addressinfo:[],
     speciesindex: 0, //用于判断'分类'页面进入时左边高亮情况
     xq_item: '', //详情页面数组
-
+    all_list:[],//搜索后的存放数组
     shoparray:[],
     shopcarlist: [
       {
