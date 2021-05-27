@@ -18,6 +18,8 @@ App({
   },
   data: {
     login:false,
+    //地址信息ID
+    address_id:'',
     code:'',
     nickname:'',
     name:'',

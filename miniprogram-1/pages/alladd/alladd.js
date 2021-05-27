@@ -8,9 +8,28 @@ Page({
    */
   data: {
     // 存放地址数据
-    addinfo:[]
+    addinfo:[],
   },
-
+  //默认地址
+  moreaddres(e){
+    let _this = this;
+    let idx = e.currentTarget.dataset.index;
+    req.req("userAddressDfault",function(res){
+    },{
+      token:app.data.token,
+      id: _this.data.addinfo[idx].address_id
+    })
+  },
+  //删除
+  delet(e){
+    let _this = this;
+    let idx = e.currentTarget.dataset.idx;
+    req.req("userAddressDelete",function(){
+    },{
+      token:app.data.token,
+      id:_this.data.addinfo[idx].address_id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -31,9 +50,8 @@ Page({
     let _this = this
     req.req("userAddressList",function(res){
       _this.setData({
-        addinfo:res
+        addinfo:res,
       })
-      console.log(_this.data.addinfo);
     },{
       token:app.data.token
     })

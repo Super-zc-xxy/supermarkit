@@ -9,8 +9,8 @@
   <view class="info_addres">{{item.procince}}+{{item.detailed}}</view>
   <view class="hr"></view>
   <view class="moren">
-    <radio name="address" class="radio">设为默认地址</radio>
-    <view class="delet">删除</view>
+    <radio name="address" class="radio" catchtap="moreaddres" data-index="{{index}}">设为默认地址</radio>
+    <view class="delet" catchtap="delet" data-idx ="{{index}}">删除</view>
     <view class="change">编辑</view>
   </view>
 </view>
