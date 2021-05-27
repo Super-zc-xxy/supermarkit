@@ -13,7 +13,7 @@
         <image src="{{item.img1}}"></image>
         <view class="right-main">
           <view class="right-title">{{item.titlename}}</view>
-          <view class="right-produce">{{item.produce}}</view>
+          <!-- <view class="right-produce">{{item.produce}}</view> -->
           <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
         </view>
       </view>

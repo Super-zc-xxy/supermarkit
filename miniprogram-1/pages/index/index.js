@@ -60,10 +60,6 @@ Page({
     over_nav: '',
     xp_item: '',
     lunbo_item: '',
-
-    // userInfo: {},
-    // hasUserInfo: false,
-    // canIUseGetUserProfile: false,
     open_id: '',
     code: '',
   },
@@ -170,7 +166,6 @@ Page({
     var lunbo_item = [];
     req.req('goodList', function (res) {
       var alllist = []; //原数据
-      
       for (let i = 0; i < res.data.length; i++) {
         if (res.data[i].good_name.indexOf('zc') != -1) {
           alllist.push(res.data[i])
@@ -178,7 +173,7 @@ Page({
       }
       for (let i = 0; i < alllist.length; i++) {
         var newlist_item = {};
-        newlist_item.titlename = alllist[i].good_name;
+        newlist_item.titlename = alllist[i].good_name.replace('zc', '');
         newlist_item.id = alllist[i].good_id;
         if (alllist[i].is_new - 0 == 1) {
           newlist_item.typestate = '爆款';
@@ -387,28 +382,53 @@ Page({
             app.data.name = res.info.nick_name;
             app.data.icon = res.info.icon;
             app.data.login = true;
-            console.log(app.data.token);
             req.req('shoppingCarList', function (res) {
-              console.log(res.data);
+              console.log(res.data,99);
+              app.data.shopcar_r = res.data;
               var shopcarlist = []
               for (let i = 0; i < res.data.length; i++) {
-                for(let j = 0; j < app.data.all_list.length; j++){
-                  if(app.data.all_list[j].id == res.data[i].good_id){
-
+                for (let j = 0; j < app.data.all_list.length; j++) {
+                  if (app.data.all_list[j].id == res.data[i].good_id) {
+                    app.data.all_list[j].prtnum = res.data[i].num
                     shopcarlist.push(app.data.all_list[j])
                   }
                 }
               }
+              for (let i = 0; i < res.data.length; i++) {
+                var _res = res;
+                // 请求商品详情数据
+                req.req('goodInfo', function (res) {
+                  var xq_list = []
+                  var test = JSON.parse(JSON.parse(res.info[0].edition));
+                  for (let j = 0; j < test.length; j++) {
+                    var testArray = {};
+                    testArray.typename = test[j].label;
+                    testArray.typetext = test[j].value.split('，')[0];
+                    testArray.typetextArray = test[j].value.split('，');
+                    xq_list.push(testArray)
+                  }
+                  shopcarlist[i].typeArray = xq_list
+                }, {
+                  good_id: res.data[i].good_id,
+                  size: 10000
+                })
+              }
               app.data.shopcarlist = shopcarlist
-              console.log(app.data.all_list);
+
+              // 生成订单
+              // req.req('generateOrder',function(res){
+              //   console.log(res);
+              // },{
+              //   token:app.data.token,
+              //   address_id:app.data.address_id,
+              //   money:app.data.money,
+              //   shopping_car_ids:app.data.shopcar_r,
+              // })
+              console.log(app.data.addressinfo);
             }, {
-              token: app.data.token
+              token: app.data.token,
+              size: 100
             })
-            // req.req('orderList', function (res) {
-            //   console.log(res);
-            // }, {
-            //   token: app.data.token
-            // })
           } else {
             console.log('未注册');
           }

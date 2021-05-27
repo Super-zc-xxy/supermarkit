@@ -1,14 +1,18 @@
+const {
+  req
+} = require("../../utils/dataReq");
+
 // pages/pay/pay.js
-const app=getApp();
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    nums:'',
-    AllPrice:'',
-    carlist:'',
+    nums: '',
+    AllPrice: '',
+    carlist: '',
   },
 
   /**
@@ -18,9 +22,25 @@ Page({
     var that = this;
     var datalist = JSON.parse(options.list)
     this.setData({
-      carlist:datalist
+      carlist: datalist
     })
-    this.start();
+    this.start(datalist);
+    console.log(datalist);
+    var shopping_car_ids = [];
+    var money = '';
+    for(let i = 0; i < datalist.length; i++){
+      shopping_car_ids.push(datalist[i].id)
+    }
+    console.log(this.data.AllPrice);
+    // 生成订单
+    // req.req('generateOrder',function(res){
+    //   console.log(res);
+    // },{
+    //   token:app.data.token,
+    //   address_id:app.data.address_id,
+    //   money:this.data.AllPrice,
+    //   shopping_car_ids:shopping_car_ids
+    // })
   },
 
   /**
@@ -71,16 +91,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  start(){
+  start() {
     var nums = 0;
     var price = 0;
-    for(let i = 0; i < this.data.carlist.length; i++){
-      nums += this.data.carlist[i].prtnum-0;
-      price += (this.data.carlist[i].nowprice-0)*(this.data.carlist[i].prtnum-0);      
+    for (let i = 0; i < this.data.carlist.length; i++) {
+      nums += this.data.carlist[i].prtnum - 0;
+      price += (this.data.carlist[i].nowprice - 0) * (this.data.carlist[i].prtnum - 0);
     }
     this.setData({
-      nums:nums,
-      AllPrice:price
+      nums: nums,
+      AllPrice: price
     })
   },
 })

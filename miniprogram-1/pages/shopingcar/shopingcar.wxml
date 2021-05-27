@@ -31,7 +31,7 @@
           <view>
             <text class="dollar">￥</text>
             <text class="dollar-num">{{carlist[index].nowprice}}</text>
-            <text class="del-text" wx:if="{{carlist[index].oldprice != ''}}">
+            <text class="del-text" wx:if="{{carlist[index].oldprice != '' &&carlist[index].oldprice != undefined}}">
               <text>￥</text>
               <text>{{carlist[index].oldprice}}</text>
             </text>
@@ -69,7 +69,7 @@
     <view class="shopCar-bottom-buy">
       <view>
         <text>合计：<text class="dollar">￥</text></text>
-        <text class="allprice-1">{{allprice}}<text class="dollar">.00</text></text>
+        <text class="allprice-1">{{allprice}}<text class="dollar"></text></text>
       </view>
       <view class="buy-btn" bindtap="topay">结算（{{allnum}}）</view>
     </view>

@@ -75,7 +75,7 @@
         <view class="all-shop-main-p r-main-p">{{items.produce}}</view>
         <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
       </view>
-      <view class="all-shop-main-p2">----------没有更多了----------</view>
+      <!-- <view class="all-shop-main-p2">----------没有更多了----------</view> -->
     </view>
   </view>
 </view>
@@ -83,7 +83,7 @@
 <view class="fixed-input {{fixedinput}}">
   <view class="input-box-r input-box-r1">
     <view class="iconfont icon-sousuo input-img"></view>
-    <input class="head-input" type="text" placeholder=" 搜索超市商品" />
+    <input catchtap="search" class="head-input" type="text" placeholder=" 搜索超市商品" />
   </view>
 </view>
 <view class="r-textbox-outbox r-textbox-outbox-1 {{over_nav}}">

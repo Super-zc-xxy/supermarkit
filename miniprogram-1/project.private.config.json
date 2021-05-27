@@ -57,6 +57,13 @@
         {
           "name": "pages/search/search",
           "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "query": "",
           "scene": null
         }
       ]

@@ -58,7 +58,7 @@
               <view class="top-3rd-text2">新权益></view>
             </view>
             <view class="top-3rd-imgbox">
-              <image src="../img/sp1.png"></image>
+              
             </view>
           </view>
           <view class="top-3rd-view">
@@ -67,7 +67,6 @@
               <view class="top-3rd-text2">限量神劵></view>
             </view>
             <view class="top-3rd-imgbox">
-              <image src="../img/sp1.png"></image>
             </view>
           </view>
           <view class="top-3rd-view">
@@ -76,7 +75,6 @@
               <view class="top-3rd-text2">领取米金></view>
             </view>
             <view class="top-3rd-imgbox">
-              <image src="../img/sp1.png"></image>
             </view>
           </view>
         </view>

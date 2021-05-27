@@ -13,27 +13,26 @@ Page({
     itemArray: '',
     shopbuystate: '',
     shopcarnum: '',
-    shopuser:[],
-    addressstate:false,
-    shopaddress:false,
+    shopuser: [],
+    addressstate: false,
+    shopaddress: false,
     // 选中
-    icon:'icon-icon-test1',
-    user:[
-      {
-        phone:'17398893373',//电话
-        procince:'4434',//省编号
-        city:'4434',//城市编号
-        area:'4434',//区县编号
-        name:'张超',//收货人名称
-        etailed:'阿巴',//详细地址
+    icon: 'icon-icon-test1',
+    user: [{
+        phone: '17398893373', //电话
+        procince: '4434', //省编号
+        city: '4434', //城市编号
+        area: '4434', //区县编号
+        name: '张超', //收货人名称
+        etailed: '阿巴', //详细地址
       },
       {
-        phone:'17398893373',//电话
-        procince:'4434',//省编号
-        city:'4434',//城市编号
-        area:'4434',//区县编号
-        name:'张超',//收货人名称
-        etailed:'阿巴',//详细地址
+        phone: '17398893373', //电话
+        procince: '4434', //省编号
+        city: '4434', //城市编号
+        area: '4434', //区县编号
+        name: '张超', //收货人名称
+        etailed: '阿巴', //详细地址
       }
     ]
   },
@@ -56,13 +55,13 @@ Page({
   },
   //地址弹框
   addres() {
-    if(app.data.addressinfo.length !=0){
+    if (app.data.addressinfo.length != 0) {
       this.setData({
-        shopaddress:false
+        shopaddress: false
       })
     }
     this.setData({
-      addressstate:true,
+      addressstate: true,
     })
   },
   //地址返回
@@ -162,7 +161,6 @@ Page({
     var xq_list2 = []
     var _this = this;
     req.req('goodInfo', function (res) {
-      console.log(res);
       var test = JSON.parse(JSON.parse(res.info[0].edition));
       for (let i = 0; i < test.length; i++) {
         var testArray = {};
@@ -180,13 +178,14 @@ Page({
       app.xq_item.intrArray = xq_list2
       app.xq_item.typeArray = xq_list
       _this.setData({
-        itemArray:_this.data.itemArray
+        itemArray: _this.data.itemArray
       })
+      console.log(app.xq_item);
     }, {
       good_id: app.xq_item.id,
       size: 10000
     })
-
+    
   },
 
   /**
@@ -224,15 +223,15 @@ Page({
 
   },
   addshopcar() {
-    // app.data.shopcarlist
-    var shopcaritem ={};
+    var shopcaritem = {};
     shopcaritem.token = app.data.token;
     shopcaritem.good_id = this.data.itemArray.id;
     shopcaritem.num = this.data.itemArray.prtnum;
-    shopcaritem.price = this.data.itemArray.nowprice-0;
-    shopcaritem.money = (this.data.itemArray.nowprice)*(this.data.itemArray.prtnum);
+    shopcaritem.price = this.data.itemArray.nowprice - 0;
+    shopcaritem.money = (this.data.itemArray.nowprice) * (this.data.itemArray.prtnum);
     shopcaritem.sku = JSON.stringify(this.data.itemArray.typeArray);
-    
+
+    console.log(shopcaritem);
     var jdge = false;
     for (let i = 0; i < app.data.shopcarlist.length; i++) {
       if (this.data.itemArray.id == app.data.shopcarlist[i].id) {
@@ -258,9 +257,27 @@ Page({
       shopbuystate: false
     })
     console.log(shopcaritem);
-    req.req('shoppingCarAddModify', function (res) {
-      console.log(res);
-    }, shopcaritem)
+    req.req('shoppingCarList', function (res) {
+      if (res.data.length < 20) {
+        var jdg = false;
+        for (let i = 0; i < res.data.length; i++) {
+          if (res.data[i].good_id == shopcaritem.good_id) {
+            jdg = true;
+            break;
+          }
+        }
+        if (jdg == false) {
+          req.req('shoppingCarAddModify', function (res) {
+            console.log(res);
+          }, shopcaritem)
+        }
+      }
+
+    }, {
+      token: app.data.token
+    })
+
+
   },
   buynow() {
     var sendlist = [];
@@ -272,12 +289,12 @@ Page({
       shopbuystate: false
     })
   },
-  type_change(e){
+  type_change(e) {
     var idx = e.currentTarget.dataset.index;
     var idx1 = e.currentTarget.dataset.index1;
     this.data.itemArray.typeArray[idx1].typetext = this.data.itemArray.typeArray[idx1].typetextArray[idx]
     this.setData({
-      itemArray:this.data.itemArray
+      itemArray: this.data.itemArray
     })
   },
 })

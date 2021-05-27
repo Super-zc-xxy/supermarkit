@@ -1,12 +1,14 @@
+const req = require('../../utils/dataReq')
+
 // pages/shopingcar/shopingcar.js
-const app=getApp();
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    carlist:'',
+    carlist: '',
     shadowtis: '',
     bianji: '编辑',
     judge: false,
@@ -20,9 +22,9 @@ Page({
     typename: '',
     sectType: '',
     carindex: '',
-    xpshopx:'',
-    indexs:0,
-    token:'',
+    xpshopx: '',
+    indexs: 0,
+    token: '',
   },
 
   /**
@@ -44,8 +46,8 @@ Page({
    */
   onShow: function () {
     this.setData({
-      carlist:app.data.shopcarlist,
-      token:app.data.token,
+      carlist: app.data.shopcarlist,
+      token: app.data.token,
     })
     this.atbegin(false, 'checked');
     this.allNums();
@@ -106,8 +108,29 @@ Page({
   },
   jian(e) {
     var idx = e.target.dataset.index;
+    console.log(this.data.carlist[idx]);
+   
+
     if (this.data.carlist[idx].prtnum > 1) {
-      this.data.carlist[idx].prtnum--
+     this.data.carlist[idx].prtnum--;
+
+
+      for(let i = 0; i < app.data.shopcar_r.length; i++){
+        if( app.data.shopcar_r[i].good_id == this.data.carlist[idx].id){
+          var shopcaritem = {};
+          shopcaritem.shopping_car_id = app.data.shopcar_r[i].shopping_car_id
+          shopcaritem.token = app.data.token;
+          shopcaritem.good_id = this.data.carlist[idx].id;
+          shopcaritem.num = this.data.carlist[idx].prtnum;
+          shopcaritem.price = this.data.carlist[idx].nowprice - 0;
+          shopcaritem.money = (this.data.carlist[idx].nowprice) * (this.data.carlist[idx].prtnum);
+          shopcaritem.sku = JSON.stringify(this.data.carlist[idx].typeArray);
+          req.req('shoppingCarAddModify', function (res) {
+            console.log(res);
+          }, shopcaritem)
+        }
+      }
+     
       var prtnums = "carlist[" + idx + "].prtnum"
       this.setData({
         [prtnums]: this.data.carlist[idx].prtnum
@@ -120,6 +143,21 @@ Page({
     var idx = e.target.dataset.index;
     if (this.data.carlist[idx].prtnum < 10) {
       this.data.carlist[idx].prtnum++
+      for(let i = 0; i < app.data.shopcar_r.length; i++){
+        if( app.data.shopcar_r[i].good_id == this.data.carlist[idx].id){
+          var shopcaritem = {};
+          shopcaritem.shopping_car_id = app.data.shopcar_r[i].shopping_car_id
+          shopcaritem.token = app.data.token;
+          shopcaritem.good_id = this.data.carlist[idx].id;
+          shopcaritem.num = this.data.carlist[idx].prtnum;
+          shopcaritem.price = this.data.carlist[idx].nowprice - 0;
+          shopcaritem.money = (this.data.carlist[idx].nowprice) * (this.data.carlist[idx].prtnum);
+          shopcaritem.sku = JSON.stringify(this.data.carlist[idx].typeArray);
+          req.req('shoppingCarAddModify', function (res) {
+            console.log(res);
+          }, shopcaritem)
+        }
+      }
       var prtnums = "carlist[" + idx + "].prtnum"
       this.setData({
         [prtnums]: this.data.carlist[idx].prtnum
@@ -189,6 +227,7 @@ Page({
       [checkedd]: this.data.carlist[idx].checkedd
     })
     this.allNums();
+    this.allcheckdd();
   },
   allNums() {
     var numadd = 0;
@@ -219,7 +258,7 @@ Page({
       allcheck: this.data.allcheck
     })
     this.allNums();
-    
+
   },
   // 判断是否全选
   allcheckdd() {
@@ -251,6 +290,7 @@ Page({
     }
   },
   delcheck() {
+    var _this = this;
     for (let i = 0; i < this.data.carlist.length; i++) {
       if (this.data.carlist[i].checked == false) {
         this.setData({
@@ -260,25 +300,45 @@ Page({
       }
 
     }
-
-
   },
   cancel() {
     this.setData({
       delbox: false
     })
   },
+  //确定删除
   sure() {
-    for (let i = 0; i < this.data.carlist.length; i++) {
-      if (this.data.carlist[i].checked == false) {
-        this.data.carlist.splice(i, 1)
-        i--
+    var _this = this;
+    req.req('shoppingCarList', function (res) {
+      console.log(_this.data.carlist);
+      for (let i = 0; i < _this.data.carlist.length; i++) {
+        if (_this.data.carlist[i].checked == false) {
+          for (let j = 0; j < res.data.length; j++) {
+            if(_this.data.carlist[i].id ==  res.data[j].good_id){
+              req.req('shoppingCarDelete', function (res) {
+              }, {
+                shopping_car_id: res.data[j].shopping_car_id,token: app.data.token
+              })
+            }
+          }
+        }
+
       }
-    }
-    this.setData({
-      delbox: false,
-      carlist: this.data.carlist
+      for (let i = 0; i < _this.data.carlist.length; i++) {
+        if (_this.data.carlist[i].checked == false) {
+          _this.data.carlist.splice(i, 1)
+          i--
+        }
+      }
+      _this.setData({
+        delbox: false,
+        carlist: _this.data.carlist
+      })
+    }, {
+      token: app.data.token
     })
+   
+    
   },
   typebox(e) {
     let idx = e.currentTarget.dataset.index;
@@ -293,7 +353,7 @@ Page({
       sectType: this.data.carlist[idx].typeArray[0].typename,
       typelist: this.data.carlist[idx].typeArray[0].typetextArray,
       carindex: idx,
-      xpshopx:this.data.carlist[idx].typeArray
+      xpshopx: this.data.carlist[idx].typeArray
     })
   },
   typeon(e) {
@@ -301,31 +361,33 @@ Page({
     let idx1 = e.currentTarget.dataset.index1;
     this.data.carlist[this.data.carindex].typeArray[idx].typetext = this.data.carlist[this.data.carindex].typeArray[idx].typetextArray[idx1]
     this.setData({
-      carlist:this.data.carlist,
-      xpshopx:this.data.carlist[this.data.carindex].typeArray,
+      carlist: this.data.carlist,
+      xpshopx: this.data.carlist[this.data.carindex].typeArray,
       style: this.data.carlist[this.data.carindex].typeArray[0].typetext,
     })
+    console.log(this.data.carlist[this.data.carindex].typeArray);
   },
-  typesure(){
+  typesure() {
     var idx = this.data.carindex;
     var carlist = this.data.carlist
     this.setData({
       typeshadow: false,
-      carlist:this.data.carlist,
+      carlist: this.data.carlist,
     })
   },
-  topay(){
+  topay() {
     var sendlist = [];
-    for(let i = 0; i < this.data.carlist.length; i++){
-      if( this.data.carlist[i].checked == false){
+    for (let i = 0; i < this.data.carlist.length; i++) {
+      if (this.data.carlist[i].checked == false) {
         sendlist.push(this.data.carlist[i])
       }
     }
+    
     wx.navigateTo({
       url: `../pay/pay?mid=3&list=${JSON.stringify(sendlist)}`
     })
   },
-  toindex(){
+  toindex() {
     wx.switchTab({
       url: `../index/index`,
     })
