@@ -46,12 +46,16 @@ Page({
      add() {
       let state = false;
       if (this.data.userinfo != "" || this.data.phone != "" || this.data.phone != "" || this.data.chooseAddress != "" || this.data.moreaddress != "") {
-        this.data.userinfo.push({
-          username: this.data.username,
-          phone: this.data.phone,
-          chooseAddress: this.data.chooseAddress,
-          moreaddress: this.data.moreaddress,
-          addressstate: this.data.addressstate
+        req.req("userAddressAddModify",function(res){
+          console.log(res);
+        },{
+          token:app.data.token,
+          name:this.data.username,
+          phone:this.data.phone,
+          procince:this.data.chooseAddress,
+          city:this.data.chooseAddress,
+          area:this.data.chooseAddress,
+          detailed:this.data.moreaddress,
         })
         state = true;
       }else{

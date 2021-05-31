@@ -9,7 +9,23 @@
     </view>
   </view>
   <view class="box1">
-    <view class="img-box">
+  <view class="box1-items" wx:for="{{carlist}}" wx:for-index="index" wx:key="index" data-index="{{index}}">
+    <view class="box1-img">
+      <image src="{{carlist[index].img1}}" alt="" />
+    </view>
+    <view class="box1-center">
+      <view class="name-1">{{carlist[index].titlename}}</view>
+      <view class="sku-box">
+        <view class="sku" wx:for="{{carlist[index].typeArray}}" wx:for-index="index" wx:key="index" data-index="{{index}}" >{{item.typetext}}</view>
+      </view>
+    </view>
+    <view class="box1-right">
+      <view class="box1-right-price">￥{{carlist[index].nowprice}}</view>
+      <view class="box1-right-num">x{{carlist[index].prtnum}}</view>
+    </view>
+  </view>
+    
+    <!-- <view class="img-box">
       <view wx:for="{{carlist}}" wx:for-index="index" wx:key="index" data-index="{{index}}">
         <image src="{{carlist[index].img1}}"></image>
       </view>
@@ -17,7 +33,7 @@
     <view class="allnumbox">
       <view>共 {{nums}} 件</view>
       <view class="iconfont icon-jiantou jiantou"></view>
-    </view>
+    </view> -->
   </view>
   <view class="box2">
     <view class="box2-item1">
@@ -37,11 +53,11 @@
     </view>
   </view>
   <!-- 底部支付 -->
-  <view class="bottom-box">
+  <view class="bottom-box" wx:if="{{payjdg}}">
     <view class="numbox">
       <view>共{{nums}}件，合计</view>
       <view class="sptext">￥{{AllPrice}}</view>
     </view>
-    <view class="topay">去付款</view>
+    <view class="topay" bindtap="topay">去付款</view>
   </view>
 </view>

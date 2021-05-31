@@ -18,7 +18,6 @@ Page({
   },
   // 搜索按钮
   search(e) {
-    console.log(this.data.searchinfo);
   },
   // 搜索值
   serachvalue(e) {
@@ -55,13 +54,11 @@ Page({
     'input': {
       function (val) {
         let _that = this;
-        console.log(val)
         if (val != "") {
           req.req("goodList", function (res) {
             _that.setData({
               searchinfo: res
             })
-            // console.log(_that.data.searchinfo);
           }, {
             page: 1,
             size: 1000,

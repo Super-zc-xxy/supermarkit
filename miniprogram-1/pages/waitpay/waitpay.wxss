@@ -7,7 +7,7 @@
   background-color: #fff;
 }
 .contain-box{
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgba(153, 153, 153, 0.2);
 }
 .back{
@@ -36,7 +36,7 @@
   border-bottom: 4rpx solid #FF681D;
 }
 .allfromisnone{
-  height: 1200rpx;
+  height: 100%;
   background-color: rgba(153, 153, 153, 0.2);
   overflow: hidden;
 }
@@ -77,12 +77,29 @@
   background-color: rgba(153, 153, 153, 0.2);
   overflow: scroll;
 }
-.waitpay-items-box1>image{
+.imgsbox{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  overflow: scroll;
+}
+.imgsbox-img1{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  background-color: #999;
+}
+.imgsbox-img2{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+  background-color: #999;
+}
+.imgsbox-img3{
   width: 180rpx;
   height: 180rpx;
   border-radius: 10rpx;
   background-color: #999;
-
 }
 .waitpay-items{
   width: 94%;
@@ -103,9 +120,16 @@
 .items-state{
   color: #FF681D;
   font-size: 28rpx;
-  margin: 20rpx;
   position: absolute;
   right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  left: 1.5%;
+}
+.items-state>view{
+  margin: 20rpx;
 }
 .shopname{
   width: 280rpx;
@@ -119,8 +143,6 @@
   margin-left: 30rpx;
 }
 .num{
-  position: absolute;
-  right: 0;
   color: #999;
   
 }
@@ -138,4 +160,11 @@
 .shopname-1{
   color: #999;
   font-size: 24rpx;
+}
+.items-top{
+  display: flex;
+  justify-content: space-between;
+}
+.nowtime{
+  color: #999;
 }

@@ -345,7 +345,7 @@ Page({
         fixedinput: '',
       })
     }
-    if (e.scrollTop > 1250) {
+    if (e.scrollTop >= 1100) {
       this.setData({
         over_nav: 'r-textbox-outbox-2',
       })
@@ -383,7 +383,6 @@ Page({
             app.data.icon = res.info.icon;
             app.data.login = true;
             req.req('shoppingCarList', function (res) {
-              console.log(res.data,99);
               app.data.shopcar_r = res.data;
               var shopcarlist = []
               for (let i = 0; i < res.data.length; i++) {
@@ -414,17 +413,9 @@ Page({
                 })
               }
               app.data.shopcarlist = shopcarlist
-
-              // 生成订单
-              // req.req('generateOrder',function(res){
-              //   console.log(res);
-              // },{
-              //   token:app.data.token,
-              //   address_id:app.data.address_id,
-              //   money:app.data.money,
-              //   shopping_car_ids:app.data.shopcar_r,
-              // })
-              console.log(app.data.addressinfo);
+              req.req('userAddressList',function(res){
+                app.data.address_id = res[0].address_id
+              },{token: app.data.token,})
             }, {
               token: app.data.token,
               size: 100

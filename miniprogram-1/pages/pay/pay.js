@@ -1,9 +1,6 @@
-const {
-  req
-} = require("../../utils/dataReq");
-
 // pages/pay/pay.js
 const app = getApp();
+const req = require('../../utils/dataReq');
 Page({
 
   /**
@@ -13,6 +10,7 @@ Page({
     nums: '',
     AllPrice: '',
     carlist: '',
+    payjdg:true,
   },
 
   /**
@@ -25,36 +23,30 @@ Page({
       carlist: datalist
     })
     this.start(datalist);
+
+
     console.log(datalist);
-    var shopping_car_ids = [];
-    var money = '';
-    for(let i = 0; i < datalist.length; i++){
-      shopping_car_ids.push(datalist[i].id)
-    }
-    console.log(this.data.AllPrice);
-    // 生成订单
-    // req.req('generateOrder',function(res){
-    //   console.log(res);
-    // },{
-    //   token:app.data.token,
-    //   address_id:app.data.address_id,
-    //   money:this.data.AllPrice,
-    //   shopping_car_ids:shopping_car_ids
-    // })
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      payjdg:app.data.payjdg
+    })
+    req.req("userAddressList", function (res) {
+    }, {
+      token: app.data.token
+    })
   },
 
   /**
@@ -103,4 +95,31 @@ Page({
       AllPrice: price
     })
   },
+  topay(){
+    var shopping_car_ids = [];
+    var money = '';
+    for (let i = 0; i < this.data.carlist.length; i++) {
+      for (let j = 0; j < app.data.shopcar_r.length; j++) {
+        if (app.data.shopcar_r[j].good_id == this.data.carlist[i].id) {
+          shopping_car_ids.push(app.data.shopcar_r[j].shopping_car_id)
+        }
+      }
+    }
+    // 生成订单
+
+    req.req('generateOrder',function(res){
+        wx.requestPayment({
+          nonceStr: res.nonce_str,
+          package: `prepay_id=${res.prepay_id}`,
+          paySign: res.paySign,
+          timeStamp: res.timeStamp,
+          signType:'MD5'
+        })
+    },{
+      token:app.data.token,
+      address_id:String(app.data.address_id),
+      money: String(this.data.AllPrice),
+      shopping_car_ids: shopping_car_ids
+    }, 'post')
+  }
 })

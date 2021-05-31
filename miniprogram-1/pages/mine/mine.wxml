@@ -2,7 +2,6 @@
   <view class="top-box">
     <view class="top">
       <view class="top-div">
-
         <view class="top-div-1st"  wx:if="{{!login}}">
           <view class="ttoutbox" wx:if="{{!login}}">
             <button class="ttoutbox" bindtap="getUserProfile"> 登录 </button>
@@ -87,13 +86,13 @@
       <view class="iconfont icon-daifukuan nav-text-img"></view>
       <view>待付款</view>
     </view>
-    <view bindtap="waitget">
+    <view>
       <view class="iconfont icon-daishouhuo nav-text-img"></view>
       <view>待收货</view>
     </view>
-    <view>
+    <view catchtap="addres">
       <view class="iconfont icon-kuaidi nav-text-img"></view>
-      <view>门店GO</view>
+      <view>地址管理</view>
     </view>
     <view>
       <view class="iconfont icon-huaban27 nav-text-img"></view>

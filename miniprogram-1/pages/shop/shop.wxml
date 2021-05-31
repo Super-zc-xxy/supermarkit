@@ -45,8 +45,8 @@
     <view class="carnum" wx:if="{{shopcarnum != ''}}">{{shopcarnum}}</view>
   </view>
   <view class="buy-buy">
-    <view class="buy-gw" bindtap="addshopcar">加入购物车</view>
-    <view class="buy-gm" bindtap="buynow">立即购买</view>
+    <view class="buy-gw" catchtap="buy">加入购物车</view>
+    <view class="buy-gm" bindtap="buy">立即购买</view>
   </view>
 </view>
 <!-- 这是购买界面 -->
@@ -60,20 +60,23 @@
         <view class="shop-body-1-2-2">{{itemArray.titlename}}</view>
       </view>
     </view>
-    <view class="shop-body-2">
-      <view class="shop-body-2-title">
-        <view>购买数量</view>
+    <view class="new-r-box">
+      <view class="shop-body-2">
+        <view class="shop-body-2-title">
+          <view>购买数量</view>
+        </view>
+      </view>
+      <view class="shop-num">
+        <view class="shop-reduce" catchtap="reduce">
+          <view class="iconfont icon-jian"></view>
+        </view>
+        <view class="num-num">{{itemArray.prtnum}}</view>
+        <view class="shop-add" catchtap="add">
+          <view class="iconfont icon-jia"></view>
+        </view>
       </view>
     </view>
-    <view class="shop-num">
-      <view class="shop-reduce" catchtap="reduce">
-        <view class="iconfont icon-jian"></view>
-      </view>
-      <view class="num-num">{{itemArray.prtnum}}</view>
-      <view class="shop-add" catchtap="add">
-        <view class="iconfont icon-jia"></view>
-      </view>
-    </view>
+   
     <view class="outbox-1-r" wx:for="{{itemArray.typeArray}}" wx:for-index="index1" wx:key="index">
       <view class="typename-r">{{item.typename}}</view>
       <view class="typetextArray-box">
@@ -99,7 +102,7 @@
       <view class="radio iconfont icon-zhizhen"></view>
       <view class="user_info">
         <view class="user_title">{{item.name}}</view>
-        <view class="user_address">{{item.procince}}{{span}}{{item.city}}{{item.area}}{{item.etailed}}</view>
+        <view class="user_address">{{item.procince}}{{item.detailed}}</view>
       </view>
       <view class="user_gou iconfont {{icon}}"></view>
     </view>

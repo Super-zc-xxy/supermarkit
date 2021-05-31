@@ -16,11 +16,16 @@ Page({
     icon:'',
   },
 
+  //地址跳转
+  addres(){
+    wx.navigateTo({
+      url: '../alladd/alladd',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.data.login);
     this.setData({
       token: app.data.token,
       login: app.data.login,
@@ -101,7 +106,6 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        // console.log(res);
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true,
@@ -109,7 +113,6 @@ Page({
         app.data.nickname = res.userInfo.nickName;
         app.data.icon = res.userInfo.avatarUrl;
         req.req('register', function (res) {
-          console.log(res);
         }, {
           icon: app.data.icon,
           openid: app.data.open_id,
@@ -119,25 +122,7 @@ Page({
       }
 
     })
-    // req.req('codeExchangeOpenid', function (res) {
-      // app.data.open_id = res.openid
-      // app.data.token = res.info.token
-      // console.log(app.data.code);
-      // req.req('shoppingCarList', function (res) {
-      //   console.log(res);
-      // }, {
-      //   token: app.data.token
-      // })
-      // req.req('orderList', function (res) {
-      //   console.log(res);
-      // }, {
-      //   token: app.data.token
-      // })
-      
-   
-  // }, {
-  //   code:app.data.code
-  // })
+
 
   },
 

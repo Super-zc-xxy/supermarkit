@@ -17,5 +17,21 @@
           <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
         </view>
       </view>
+      <view class="right-shoper" wx:for="{{shoper.shoplist}}" wx:for-item="item" wx:key="index" data-faddish="{{index}}" bindtap="thisitem">
+        <image src="{{item.img1}}"></image>
+        <view class="right-main">
+          <view class="right-title">{{item.titlename}}</view>
+          <!-- <view class="right-produce">{{item.produce}}</view> -->
+          <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
+        </view>
+      </view>
+      <view class="right-shoper" wx:for="{{shoper.shoplist}}" wx:for-item="item" wx:key="index" data-faddish="{{index}}" bindtap="thisitem">
+        <image src="{{item.img1}}"></image>
+        <view class="right-main">
+          <view class="right-title">{{item.titlename}}</view>
+          <!-- <view class="right-produce">{{item.produce}}</view> -->
+          <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
+        </view>
+      </view>
   </view>
 </view>

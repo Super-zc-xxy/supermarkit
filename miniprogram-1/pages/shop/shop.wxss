@@ -180,13 +180,13 @@ page{
 }
 .shop-body-1{
   width: 100%;
-  height: 1200rpx;
   border-radius: 3% 3% 0 0;
   background:rgb(243,243,243);
   position: fixed;
   bottom: 0; 
   z-index: 266;
   overflow: scroll;
+  padding-bottom: 200rpx;
 }
 .shop-body-back{
   position: absolute;
@@ -195,7 +195,7 @@ page{
 }
 .shop-body-1-1{
   width: 100%;
-  margin-top: 70rpx;
+  margin-top: 40rpx;
   display: flex;
 }
 .shop-body-1-1>image{
@@ -217,8 +217,9 @@ page{
   padding: 20rpx;
 }
 .shop-body-1-2-2{
-  font-size: 25rpx;
+  font-size: 30rpx;
   margin-left: 20rpx;
+  font-weight: 700;
 }
 .shop-body-2-title{
   padding: 20rpx 40rpx;
@@ -241,6 +242,10 @@ page{
   display: flex;
   justify-content: center;
   margin: 0 20rpx;
+}
+.new-r-box{
+  display: flex;
+  justify-content: space-between;
 }
 .shop-reduce>view{
   font-size: 40rpx;
@@ -386,9 +391,9 @@ page{
   right: 0;
 }
 .outbox-1-r{
-  width: 94%;
+  width: 90%;
   margin: auto;
-  margin-top: 100rpx;
+  margin-top: 40rpx;
   
 }
 .typename-r{
@@ -398,12 +403,12 @@ page{
 .typetextArray-box{
   display: flex;
   width: 100%;
-  margin-top: 40rpx;
+  margin-top: 20rpx;
 }
 .typetextArray-box-item{
   border-radius: 30rpx;
-  margin: 0rpx 20rpx;
-  background-color: #F5F5F5;
+  margin: 0rpx 10rpx;
+  background-color: #fff;
   font-size: 26rpx;
   padding: 5rpx 20rpx;
   border: 1px solid transparent;
@@ -438,7 +443,7 @@ page{
   height: 40rpx;
 }
 .user_address{
-  height: 100rpx;
+  height: 85rpx;
   margin-top: 20rpx;
   text-overflow: ellipsis;
   overflow: hidden;

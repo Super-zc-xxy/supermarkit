@@ -17,10 +17,13 @@ App({
     userInfo: null
   },
   data: {
-    address_id:'',
+    payjdg:true,
+    fromList:'',
     money:'',
     shopcar_r:'',//购物车原始数据
     login:false,
+    //地址信息ID
+    address_id:'',
     code:'',
     nickname:'',//用户名
     name:'',

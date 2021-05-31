@@ -66,9 +66,9 @@ Page({
   },
   //地址返回
   addres_back() {
-    this.data.addresstate = false;
+    this.data.addressstate = false;
     this.setData({
-      shopaddress: this.data.addressstate
+      addressstate: this.data.addressstate
     })
   },
   //地址跳转
@@ -130,7 +130,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -141,6 +140,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let _that = this;
+    req.req("userAddressList",function(res){
+      _that.setData({
+        user :  res
+      })
+    },{
+      token:app.data.token
+    })
     setTimeout(() => {
       this.setData({
         itemArray: app.xq_item
@@ -180,7 +187,6 @@ Page({
       _this.setData({
         itemArray: _this.data.itemArray
       })
-      console.log(app.xq_item);
     }, {
       good_id: app.xq_item.id,
       size: 10000
@@ -231,7 +237,6 @@ Page({
     shopcaritem.money = (this.data.itemArray.nowprice) * (this.data.itemArray.prtnum);
     shopcaritem.sku = JSON.stringify(this.data.itemArray.typeArray);
 
-    console.log(shopcaritem);
     var jdge = false;
     for (let i = 0; i < app.data.shopcarlist.length; i++) {
       if (this.data.itemArray.id == app.data.shopcarlist[i].id) {
@@ -256,7 +261,6 @@ Page({
     this.setData({
       shopbuystate: false
     })
-    console.log(shopcaritem);
     req.req('shoppingCarList', function (res) {
       if (res.data.length < 20) {
         var jdg = false;
@@ -268,7 +272,6 @@ Page({
         }
         if (jdg == false) {
           req.req('shoppingCarAddModify', function (res) {
-            console.log(res);
           }, shopcaritem)
         }
       }
@@ -280,6 +283,7 @@ Page({
 
   },
   buynow() {
+    app.data.payjdg = true;
     var sendlist = [];
     sendlist.push(this.data.itemArray)
     wx.navigateTo({

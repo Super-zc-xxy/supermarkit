@@ -1,6 +1,6 @@
 <!--pages/shopingcar/shopingcar.wxml-->
 <!-- 空购物车 -->
-<view class="mox"> 
+<view class="mox" wx:if="{{token != ''}}"> 
 <view class="emptyCar" wx:if="{{carlist.length == 0}}">
   <view class="car-radio">
     <view class="iconfont icon-3 car-img"></view>
@@ -94,9 +94,6 @@
           <view>
             <text class="type-text1">￥{{nowprice}}</text>
           </view>
-          <view wx:if="{{oldprice != ''}}">
-            <text class="type-text2">￥{{oldprice}}</text>
-          </view>
         </view>
         <view class="type-text3"> {{prtName}} {{style}}</view>
       </view>
@@ -116,6 +113,10 @@
   </view>
 </view>
 </view>
-<!-- <view class="checkbox {{checked}}" bindtap="checkbox">
-  <view class="iconfont icon-check"></view>
-</view> -->
+<view class="emptyCar" wx:if="{{token == ''}}">
+  <view class="car-radio">
+    <view class="iconfont icon-3 car-img"></view>
+  </view>
+  <view class="empty-tis-text">您还没有登录</view>
+  <view class="empty-tis-btn" bindtap="tomine">去登录</view>
+</view>

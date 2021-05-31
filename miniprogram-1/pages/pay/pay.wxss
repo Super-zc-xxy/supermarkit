@@ -34,15 +34,13 @@
   font-size: 28rpx;
 }
 .box1{
+  max-height: 360rpx;
+  overflow: scroll;
   background-color: #fff;
   border-radius: 20rpx;
   width: 94%;
   margin: auto;
   margin-top: 30rpx;
-  height: 150rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 .box1 image{
   width: 100rpx;
@@ -122,4 +120,43 @@
   font-size: 32rpx;
   color: #FF681D;
   font-weight: 700;
+}
+
+.box1-items{
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box1-items>view{
+  margin: 0rpx 20rpx;
+}
+.sku-box{
+  display: flex;
+}
+.box1-center{
+  height: 100rpx;
+  width: 60%;
+}
+.sku-box>view{
+  margin: 0rpx 10rpx;
+  font-size: 26rpx;
+  
+}
+.box1-right{
+  height: 100rpx;
+  width: 150rpx;
+  font-size: 28rpx;
+}
+.name-1{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-left: 10rpx;
+  font-weight: 600;
+}
+.box1-right-price{
+  color: red;
+}
+.box1-right-num{
+  color: #999;
 }

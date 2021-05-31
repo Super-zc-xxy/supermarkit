@@ -8,45 +8,47 @@ page{
   display: flex;
 }
 .main-left{
-  width: 25%;
+  width: 20%;
+  height: 100vh;
   border-right: 1px solid rgb(235,235,235);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   background: rgb(255,255,255);
   font-size: 36rpx;
   position: fixed;
   top: 0;
+  border-right: 1rpx solid #999;
 }
 .main-left>view{
   text-align: center;
-  line-height: 16.7vh;
+  /* line-height: 16.7vh; */
+  font-size: 30rpx;
+  line-height: 80rpx;
 }
 .main-right{
-  width: 75%;
+  width: 80%;
   position: absolute;
   right: 0;
 }
 .right-shoper{
-  width: 96%;
+  width: 99%;
   margin: auto;
-  margin-bottom: 20rpx;
-  margin-top: 5rpx;
-  height: 250rpx;
   display: flex;
   align-items: center;
   background: rgb(255,255,255);
-  border-radius: 20rpx;
+  border-bottom: 1rpx solid #999;
+  height: 200rpx;
 }
 .right-shoper>image{
-  width: 200rpx;
-  height: 200rpx;
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
 }
 .right-main{
-  height: 200rpx;
+  height: 150rpx;
 }
 .right-title{
-  font-size: 40rpx;
+  font-size: 28rpx;
   font-weight: 700;
   margin:20rpx;
   text-overflow: ellipsis;
@@ -60,14 +62,14 @@ page{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  
 }
 .right-price{
   color: red;
-  font-size: 40rpx;
+  font-size: 30rpx;
+  margin: 20rpx;
 }
 .right-price>text{
-  font-size: 30rpx;
+  font-size: 24rpx;
 }
 .showon{
   color: #FF4001;

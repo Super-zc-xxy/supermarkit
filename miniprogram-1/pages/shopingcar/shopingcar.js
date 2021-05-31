@@ -108,7 +108,6 @@ Page({
   },
   jian(e) {
     var idx = e.target.dataset.index;
-    console.log(this.data.carlist[idx]);
    
 
     if (this.data.carlist[idx].prtnum > 1) {
@@ -126,7 +125,6 @@ Page({
           shopcaritem.money = (this.data.carlist[idx].nowprice) * (this.data.carlist[idx].prtnum);
           shopcaritem.sku = JSON.stringify(this.data.carlist[idx].typeArray);
           req.req('shoppingCarAddModify', function (res) {
-            console.log(res);
           }, shopcaritem)
         }
       }
@@ -154,7 +152,6 @@ Page({
           shopcaritem.money = (this.data.carlist[idx].nowprice) * (this.data.carlist[idx].prtnum);
           shopcaritem.sku = JSON.stringify(this.data.carlist[idx].typeArray);
           req.req('shoppingCarAddModify', function (res) {
-            console.log(res);
           }, shopcaritem)
         }
       }
@@ -310,7 +307,6 @@ Page({
   sure() {
     var _this = this;
     req.req('shoppingCarList', function (res) {
-      console.log(_this.data.carlist);
       for (let i = 0; i < _this.data.carlist.length; i++) {
         if (_this.data.carlist[i].checked == false) {
           for (let j = 0; j < res.data.length; j++) {
@@ -365,7 +361,6 @@ Page({
       xpshopx: this.data.carlist[this.data.carindex].typeArray,
       style: this.data.carlist[this.data.carindex].typeArray[0].typetext,
     })
-    console.log(this.data.carlist[this.data.carindex].typeArray);
   },
   typesure() {
     var idx = this.data.carindex;
@@ -382,14 +377,20 @@ Page({
         sendlist.push(this.data.carlist[i])
       }
     }
-    
+    app.data.payjdg = true;
     wx.navigateTo({
       url: `../pay/pay?mid=3&list=${JSON.stringify(sendlist)}`
     })
+
   },
   toindex() {
     wx.switchTab({
       url: `../index/index`,
     })
   },
+  tomine(){
+    wx.switchTab({
+      url: `../mine/mine`,
+    })
+  }
 })

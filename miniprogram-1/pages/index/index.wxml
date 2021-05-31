@@ -24,7 +24,7 @@
 <view class="shop">
   <view wx:for="{{shop}}" wx:key="index" bindtap="tospecies" data-index="{{index}}">
     <text class="iconfont {{item.img1}} shopimg"></text>
-    <text>{{item.p}}</text>
+    <text class="shop-text">{{item.p}}</text>
   </view>
 </view>
 <!-- 这是爆款 -->
@@ -33,7 +33,7 @@
   <view class="bk-shop">
     <view catchtap="bk" data-faddish="{{index}}" wx:for="{{3}}" wx:key="index">
       <image src="{{bk_shoplist[index].img1}}"></image>
-      <view class="iconfont icon-first bk-1"></view>
+      <view class="iconfont icon-first bk-{{index+1}}"></view>
       <view class="bk-text">{{bk_shoplist[index].titlename}}</view>
       <view class="bk-text bk-text1">{{bk_shoplist[index].produce}}</view>
       <view class="bk-text ">￥{{bk_shoplist[index].nowprice}}</view>
@@ -73,7 +73,34 @@
         </view>
         <view class="all-shop-main-p">{{items.titlename}}</view>
         <view class="all-shop-main-p r-main-p">{{items.produce}}</view>
+        <view>
         <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
+          
+        </view>
+      </view>
+      <view class="all-shop-main" wx:for="{{item.shoplist}}" wx:key="index" wx:for-item="items" bindtap="show"
+        data-faddish="{{index}}">
+        <view class="r-img-box">
+          <image src="{{items.img1}}"></image>
+        </view>
+        <view class="all-shop-main-p">{{items.titlename}}</view>
+        <view class="all-shop-main-p r-main-p">{{items.produce}}</view>
+        <view>
+        <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
+          
+        </view>
+      </view>
+      <view class="all-shop-main" wx:for="{{item.shoplist}}" wx:key="index" wx:for-item="items" bindtap="show"
+        data-faddish="{{index}}">
+        <view class="r-img-box">
+          <image src="{{items.img1}}"></image>
+        </view>
+        <view class="all-shop-main-p">{{items.titlename}}</view>
+        <view class="all-shop-main-p r-main-p">{{items.produce}}</view>
+        <view>
+        <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
+          
+        </view>
       </view>
       <!-- <view class="all-shop-main-p2">----------没有更多了----------</view> -->
     </view>
