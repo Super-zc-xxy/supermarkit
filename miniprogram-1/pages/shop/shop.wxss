@@ -1,7 +1,7 @@
 /* pages/shop/shop.wxss */
 page{
   position: relative;
-  background:rgb(228, 224, 220);
+  background:rgb(243, 243, 243);
 }
 .header-swiper{
   width: 100%;
@@ -45,6 +45,7 @@ page{
 .shop-price{
   width: 100%;
   background:white;
+  height: 380rpx;
 }
 .shop-money{
   font-size: 40rpx;
@@ -57,9 +58,7 @@ page{
 }
 .shop-produce{
   padding:20rpx;
-  font-size: 30rpx;
-  font-weight: 700;
-  margin-bottom: 20rpx;
+  font-size: 28rpx;
 }
 .fenxiang{
   position: absolute;
@@ -69,11 +68,12 @@ page{
   padding: 5rpx 20rpx;
   font-size: 20rpx;
 }
-.shop-price view:nth-last-child(1){
+/* .shop-price view:nth-last-child(1){
   line-height: 60rpx;
-}
+} */
 .shop-main text{
   margin-left:20rpx;
+  font-size: 20rpx;
 }
 .shop-list{
   width: 100%;
@@ -81,7 +81,7 @@ page{
   display: flex;
   align-items: center;
   padding: 30rpx 0;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 .list-jp{
   margin-left:20rpx;
@@ -115,6 +115,7 @@ page{
 }
 .user-main-2{
   margin-left: 40rpx;
+  font-size: 24rpx;
 }
 .user-main-3{
   margin-left: 20rpx;
@@ -452,6 +453,7 @@ page{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   color: #999;
+  font-size: 24rpx;
 }
 .user_gou{
   width: 40rpx;
@@ -459,4 +461,27 @@ page{
   margin-left: 20rpx;
   border-radius: 50%;
   font-size: 40rpx;
+}
+.newinfo7{
+  width: 90%;
+  height: 80rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background: rgb(255,242,239);
+  position: relative;
+}
+.newinfo8{
+  height: 30rpx;
+  display: flex;
+  width: 98rpx;
+  align-items: center;
+  color: rgb(255,116,12);
+  font-size: 18rpx;
+  border: 1px solid rgb(255,116,12);
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+.icon-zhizhen{
+  color: red;
 }

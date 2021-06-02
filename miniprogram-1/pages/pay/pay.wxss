@@ -142,7 +142,7 @@
 }
 .sku-box>view{
   margin: 0rpx 10rpx;
-  font-size: 26rpx;
+  font-size: 24rpx;
   
 }
 .box1-right{
@@ -158,6 +158,7 @@
 }
 .box1-right-num{
   color: #999;
+  font-size: 24rpx;
 }
 .mid-text{
   font-weight: 700;
@@ -176,4 +177,8 @@
 }
 .rigth{
   width: 100%;
+}
+#nowprice{
+  color: #FF681D;
+  font-size: 26rpx;
 }

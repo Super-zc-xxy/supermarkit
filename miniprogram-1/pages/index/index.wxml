@@ -34,9 +34,10 @@
     <view catchtap="bk" data-faddish="{{index}}" wx:for="{{3}}" wx:key="index">
       <image src="{{bk_shoplist[index].img1}}"></image>
       <view class="iconfont icon-first bk-{{index+1}}"></view>
-      <view class="bk-text">{{bk_shoplist[index].titlename}}</view>
-      <view class="bk-text bk-text1">这是最好的{{bk_shoplist[index].titlename}}</view>
-      <view class="bk-text ">￥{{bk_shoplist[index].nowprice}}</view>
+      <view class="bk-text">这是最好的{{bk_shoplist[index].titlename}}</view>
+      <view class="bk-text bk-text1">你不冲，我不冲，世间何人来冲</view>
+      <view class="bk-text bk_color">￥{{bk_shoplist[index].nowprice}}</view>
+      <view class="newinfo3">满59包邮</view>
     </view>
   
   </view>
@@ -47,11 +48,12 @@
     <view class="xp-title2">更多新品 ></view>
   </view>
   <view class="xp-shop">
-    <view wx:for="{{6}}" wx:key="index" bindtap="xp" data-faddish="{{index}}" >
+    <view wx:for="{{6}}" wx:key="index" bindtap="xp" data-faddish="{{index}}" class="test">
       <image src="{{xp_shoplist[index].img1}}"></image>
-      <view class="bk-text">{{xp_shoplist[index].titlename}}</view>
-      <view class="bk-text bk-text1">这是最好的{{xp_shoplist[index].titlename}}</view>
-      <view class="bk-text ">￥{{xp_shoplist[index].nowprice}}</view>
+      <view class="bk-text">你想要那个{{xp_shoplist[index].titlename}}</view>
+      <view class="bk-text bk-text1">守护天下最好的11</view>
+      <view class="bk-text xp_color">￥{{xp_shoplist[index].nowprice}}</view>
+      <view class="newinfo3">满59包邮</view>
     </view>
   </view>
 
@@ -71,36 +73,39 @@
         <view class="r-img-box">
           <image src="{{items.img1}}"></image>
         </view>
-        <view class="all-shop-main-p">{{items.titlename}}</view>
-        <view class="all-shop-main-p r-main-p">这是最棒的{{items.titlename}}</view>
+        <view class="all-shop-main-p">这是最好的有点贵的又备有面子的{{items.titlename}}</view>
+        <view class="all-shop-main-p r-main-p">守护天下最好的琪琪</view>
         <view>
         <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
-          
         </view>
+        <view class="newinfo">满59包邮</view>
+        <view class="newinfo1">满159包人</view>
       </view>
       <view class="all-shop-main" wx:for="{{item.shoplist}}" wx:key="index" wx:for-item="items" bindtap="show"
         data-faddish="{{index}}">
         <view class="r-img-box">
           <image src="{{items.img1}}"></image>
         </view>
-        <view class="all-shop-main-p">{{items.titlename}}</view>
-        <view class="all-shop-main-p r-main-p">这是最棒的{{items.titlename}}</view>
+        <view class="all-shop-main-p">这是最好的有点贵的又备有面子的{{items.titlename}}</view>
+        <view class="all-shop-main-p r-main-p">守护天下最好的琪琪</view>
         <view>
         <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
-          
         </view>
+        <view class="newinfo">满59包邮</view>
+        <view class="newinfo1">满159包人</view>
       </view>
       <view class="all-shop-main" wx:for="{{item.shoplist}}" wx:key="index" wx:for-item="items" bindtap="show"
         data-faddish="{{index}}">
         <view class="r-img-box">
           <image src="{{items.img1}}"></image>
         </view>
-        <view class="all-shop-main-p">{{items.titlename}}</view>
-        <view class="all-shop-main-p r-main-p">这是最棒的{{items.titlename}}</view>
+        <view class="all-shop-main-p">这是最好的有点贵的又备有面子的{{items.titlename}}</view>
+        <view class="all-shop-main-p r-main-p">守护天下最好的琪琪</view>
         <view>
         <view class="all-shop-main-p1">￥{{items.nowprice}}</view>
-          
         </view>
+        <view class="newinfo">满59包邮</view>
+        <view class="newinfo1">满159包人</view>
       </view>
       <!-- <view class="all-shop-main-p2">----------没有更多了----------</view> -->
     </view>

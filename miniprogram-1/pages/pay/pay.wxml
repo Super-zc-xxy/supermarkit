@@ -21,7 +21,7 @@
     <view class="rigth">
       <view class="right-box1">
         <view class="name-1">这是全天下最好的{{carlist[index].titlename}}</view>
-        <view>￥{{carlist[index].nowprice}}</view>
+        <view id="nowprice">￥{{carlist[index].nowprice}}</view>
       </view>
       <view class="right-box1">
         <view class="sku-box">

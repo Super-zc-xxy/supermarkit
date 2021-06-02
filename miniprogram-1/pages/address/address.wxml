@@ -9,11 +9,11 @@
   <view class="info-info">
     <view class="info-1">
     <view>姓名</view>
-    <input type="text" placeholder="收货人姓名" model:value="{{username}}" />
+    <input type="text" placeholder="收货人姓名" model:value="{{username}}" class="name"/>
     </view>
     <view class="info-1">
     <view>手机号</view>
-    <input type="text" placeholder="收件人手机号" model:value="{{phone}}"/>
+    <input type="text" placeholder="收件人手机号" model:value="{{phone}}" class="phone"/>
     </view>
     <view class="info-1" bindtap="onChangeAddress">
     <view>所在地址</view>
@@ -22,7 +22,7 @@
     </view>
     <view class="info-1 info-2">
     <view>详细地址</view>
-    <textarea name="" id="" cols="60" rows="40" model:value="{{moreaddress}}"></textarea>
+    <textarea name="" id="" cols="60" rows="40" model:value="{{moreaddress}}" placeholder="请输入门牌号、房间号" class="xxad"></textarea>
     </view>
   </view>
 </view>
