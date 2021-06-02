@@ -12,11 +12,14 @@
 <!-- 这是商品价格和介绍 -->
 <view class="shop-price">
   <view class="shop-money"><text class="shop-sup">￥</text>{{itemArray.nowprice}}</view>
-  <view class="shop-produce">{{itemArray.titlename}}<text class="iconfont icon-fenxiang fenxiang"></text></view>
+  <view class="newinfo7">
+    <view class="newinfo8">预计得3米金</view>
+  </view>
+  <view class="shop-produce">这是全天底下最好的{{itemArray.titlename}}<text class="iconfont icon-fenxiang fenxiang"></text></view>
   <view class="shop-main" wx:for="{{itemArray.intrArray}}" wx:key="index" data-index="index">
     <view class="spmiaoshu">
     <view class="box-ms">{{index+1}}</view>
-    <text>{{item}}</text>
+    <text>这是毛爷爷都特憋爱的{{item}}</text>
     </view>
   </view>
 </view>
@@ -27,7 +30,7 @@
 <!-- 这是用户购买 -->
 <view class="shop-user">
   <view class="user-main" catchtap="buy">
-    <text class="user-main-1">已选</text><text class="user-main-2">{{shop.title}} <text class="user-main-3">x{{itemArray.prtnum}}</text><text class="user-main-4">></text></text>
+    <text class="user-main-1">已选</text><text class="user-main-2">这是全天底下最好的{{itemArray.titlename}}<text class="user-main-3">x{{itemArray.prtnum}}</text><text class="user-main-4">></text></text>
   </view>
   <view class="user-main" catchtap="addres">
     <text class="user-main-1 ">送至</text><text class="iconfont icon-zhizhen user-main-2-1"></text><text style="margin-left:20rpx">成都市 高新区</text><text class="user-main-4">></text>

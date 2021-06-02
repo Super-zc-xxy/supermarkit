@@ -12,25 +12,34 @@
       <view class="right-shoper" wx:for="{{shoper.shoplist}}" wx:for-item="item" wx:key="index" data-faddish="{{index}}" bindtap="thisitem">
         <image src="{{item.img1}}"></image>
         <view class="right-main">
-          <view class="right-title">{{item.titlename}}</view>
-          <!-- <view class="right-produce">{{item.produce}}</view> -->
+          <view class="right-title">这就是天底下最好的{{item.titlename}}</view>
+          <view class="right-produce">守护最好的琪琪</view>
+          <view class="right-produce">我们一起去看奇奇颗颗历险记</view>
           <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
+          <view class="newinfo5">极大的优惠哟</view>
+          <view class="newinfo4">快点购买吧</view>
         </view>
       </view>
       <view class="right-shoper" wx:for="{{shoper.shoplist}}" wx:for-item="item" wx:key="index" data-faddish="{{index}}" bindtap="thisitem">
         <image src="{{item.img1}}"></image>
         <view class="right-main">
-          <view class="right-title">{{item.titlename}}</view>
-          <!-- <view class="right-produce">{{item.produce}}</view> -->
+          <view class="right-title">这就是天底下最好的{{item.titlename}}</view>
+          <view class="right-produce">守护最好的琪琪</view>
+          <view class="right-produce">我们一起去看奇奇颗颗历险记</view>
           <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
+          <view class="newinfo5">极大的优惠哟</view>
+          <view class="newinfo4">快点购买吧</view>
         </view>
       </view>
       <view class="right-shoper" wx:for="{{shoper.shoplist}}" wx:for-item="item" wx:key="index" data-faddish="{{index}}" bindtap="thisitem">
         <image src="{{item.img1}}"></image>
         <view class="right-main">
-          <view class="right-title">{{item.titlename}}</view>
-          <!-- <view class="right-produce">{{item.produce}}</view> -->
+          <view class="right-title">这就是天底下最好的{{item.titlename}}</view>
+          <view class="right-produce">守护最好的琪琪</view>
+          <view class="right-produce">我们一起去看奇奇颗颗历险记</view>
           <view class="right-price"><text>￥</text>{{item.nowprice}}</view>
+          <view class="newinfo5">极大的优惠哟</view>
+          <view class="newinfo4">快点购买吧</view>
         </view>
       </view>
   </view>
