@@ -57,7 +57,7 @@
       <image src="{{itemArray.img1}}"></image>
       <view class="shop-body-1-2">
         <view class="shop-body-1-2-1">￥{{itemArray.nowprice}}</view>
-        <view class="shop-body-1-2-2">{{itemArray.titlename}}</view>
+        <view class="shop-body-1-2-2">{{itemArray.titlename}} <text wx:for="{{itemArray.typeArray}}" wx:for-index="index1" wx:key="index"> {{item.typetext}}</text></view>
       </view>
     </view>
     <view class="new-r-box">

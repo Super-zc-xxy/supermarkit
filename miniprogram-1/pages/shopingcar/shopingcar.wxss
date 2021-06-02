@@ -66,8 +66,9 @@
   margin-bottom: 20rpx;
 }
 .items-name{
-  font-size: 30rpx;
+  font-size: 28rpx;
   margin-bottom: 10rpx;
+  color: rgb(44, 31, 31);
 }
 .fullCar-contain-item-radio{
   scale: 0.8;

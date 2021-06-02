@@ -28,10 +28,11 @@
   height: 240rpx;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .size-text{
-  font-size: 28rpx;
+  font-size: 24rpx;
+  margin-left: 20rpx;
 }
 .box1{
   max-height: 360rpx;
@@ -133,6 +134,7 @@
 }
 .sku-box{
   display: flex;
+  color: #999;
 }
 .box1-center{
   height: 100rpx;
@@ -154,9 +156,24 @@
   margin-left: 10rpx;
   font-weight: 600;
 }
-.box1-right-price{
-  color: red;
-}
 .box1-right-num{
   color: #999;
+}
+.mid-text{
+  font-weight: 700;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.icon-jiantou{
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+.right-box1{
+  margin-right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.rigth{
+  width: 100%;
 }

@@ -184,18 +184,18 @@ Page({
     }
     console.log(this.data.fromList);
     var xp_shop = [];
-    // for(let i  = 0; i < this.data.fromList[idx].childern.length; i++){
-    //   var pushitem = {};
-    //   pushitem.prtnum = this.data.fromList[idx].childern[i].num;
-    //   pushitem.titlename = this.data.fromList[idx].childern[i].good_name;
-    //   pushitem.nowprice = this.data.fromList[idx].childern[i].price;
-    //   pushitem.prtnum = this.data.fromList[idx].childern[i].num
-    //   pushitem.img1 = this.data.fromList[idx].childern[i].img
-    //   xp_shop.push(pushitem)
-    // }
-    // wx.navigateTo({
-    //   url: `../pay/pay?mid=9&list=${JSON.stringify(xp_shop)}`
-    // })
+    for(let i  = 0; i < this.data.fromList[idx].childern.length; i++){
+      var pushitem = {};
+      pushitem.prtnum = this.data.fromList[idx].childern[i].num;
+      pushitem.titlename = this.data.fromList[idx].childern[i].good_name;
+      pushitem.nowprice = this.data.fromList[idx].childern[i].price;
+      pushitem.prtnum = this.data.fromList[idx].childern[i].num
+      pushitem.img1 = this.data.fromList[idx].childern[i].img
+      xp_shop.push(pushitem)
+    }
+    wx.navigateTo({
+      url: `../pay/pay?mid=9&list=${JSON.stringify(xp_shop)}`
+    })
   },
   timestampToTime(timestamp) {
     var date = new Date(timestamp * 1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000

@@ -1,60 +1,86 @@
 <!--pages/waitpay/waitpay.wxml-->
 <view class="contain-box">
-<view class="top-nav">
-  <view bindtap="all">
-    <view>全部</view>
-    <view class="outline {{outline[0]}}"></view>
-  </view>
-  <view bindtap="waitpay">
-    <view>代付款</view>
-    <view class="outline {{outline[1]}}"></view>
-  </view>
-  <view bindtap="waitget">
-    <view>待收货</view>
-    <view class="outline {{outline[2]}}"></view>
-  </view>
-</view>
-<view class="allfromisnone" wx:if="{{fromList == ''}}">
-  <view class="nonefrom-img">
-    <view class="iconfont icon-17 nonefrom-img1"></view>
-  </view>
-  <view class="nofrom-tis">您没有相关订单</view>
-  <view class="goshop-btn">到小米商城逛逛</view>
-</view>
-<view class="waitpay" wx:if="{{fromList != ''}}">
-  <view class="waitpay-items" wx:for="{{fromList}}" wx:for-index="index" wx:key="index" wx:if="{{fromList != ''}}" data-index="{{index}}" bindtap="payonce" wx:for-item="items">
-    <view class="items-state">
-      <view class="nowtime"> {{fromList[index].nowtime}} </view>
-      <view> {{fromList[index].paystate}}</view>
+  <view class="top-nav">
+    <view bindtap="all">
+      <view>全部</view>
+      <view class="outline {{outline[0]}}"></view>
     </view>
-    <view class="waitpay-items-box1">
-      <view class="imgsbox">
-        <image src="{{item.img}}" wx:for="{{items.childern}}" class="{{items.childern.length > 4 ? '.imgsbox-img1' : '.imgsbox-img2'}} {{items.childern.length == 1 ? '.imgsbox-img3' : ''}}"></image>
-      </view>
-      <view class="items-box1-right">
-          <view class="shopname-1">{{fromList[index].typeArray[0].typetext}}</view>
-        <view class="pricebox">
-          <view class="price">￥{{fromList[index].money}}</view>
-          <view class="phone"> <text>联系电话:</text></view>
-          <view class="nowtime"> {{fromList[index].phone}} </view>
-          <view class="num"> <text>付款人</text> {{fromList[index].name}} </view>
-
+    <view bindtap="waitpay">
+      <view>待付款</view>
+      <view class="outline {{outline[1]}}"></view>
+    </view>
+    <view bindtap="waitget">
+      <view>待收货</view>
+      <view class="outline {{outline[2]}}"></view>
+    </view>
+  </view>
+  <view class="allfromisnone" wx:if="{{fromList == ''}}">
+    <view class="nonefrom-img">
+      <view class="iconfont icon-17 nonefrom-img1"></view>
+    </view>
+    <view class="nofrom-tis">您没有相关订单</view>
+    <view class="goshop-btn">到小米商城逛逛</view>
+  </view>
+  <view class="waitpay" wx:if="{{fromList != ''}}">
+    <view class="outbox-1" wx:for="{{fromList}}" wx:for-index="index" wx:key="index" wx:if="{{fromList != ''}}"
+      data-index="{{index}}" bindtap="payonce" wx:for-item="items">
+      <view class="waitpay-items">
+        <view class="items-state">
+          <view class="nowtime"> {{fromList[index].nowtime}} </view>
+          <view> {{fromList[index].paystate}}</view>
         </view>
-        <!-- <view><text>联系电话：{{fromList[index].phone}}</text> {{fromList[index].titlename}}</view> -->
+        <view class="waitpay-items-box1">
+          <view class="imgsbox">
+            <image src="{{item.img}}" wx:for="{{items.childern}}"
+              class="{{items.childern.length > 4 ? '.imgsbox-img1' : '.imgsbox-img2'}} {{items.childern.length == 1 ? '.imgsbox-img3' : ''}}">
+            </image>
+          </view>
+          <view class="items-box1-right">
+            <view class="pricebox">
+              <view class="pricebox-box2">
+                <view>7天无理由退换</view>
+                <view>公益捐赠0.02元</view>
+              </view>
+              <view class="pricebox-box1">
+                <view class="phone"> <text>运费险:</text></view>
+                <view class="nowtime">退换货可自动理赔</view>
+              </view>
+              <view class="pricebox-box1">
+                <view class="phone"> <text>付款人:</text></view>
+                <view class="nowtime"> {{fromList[index].name}}</view>
+              </view>
+              <view class="pricebox-box1">
+                <view class="phone"> <text>联系电话:</text></view>
+                <view class="nowtime"> {{fromList[index].phone}} </view>
+              </view>
+            </view>
 
+            <!-- <view><text>联系电话：{{fromList[index].phone}}</text> {{fromList[index].titlename}}</view> -->
+
+          </view>
+        </view>
+        <view class="allprice">
+          <view></view>
+          <view class="pricee-box2">
+            <text class="allprice-price">总价￥{{(fromList[index].money)}} </text>
+            <text id="text">实付款￥{{fromList[index].money}} </text>
+          </view>
+        </view>
+      </view>
+      <view class="bottom-box">
+        <view class="bottom-box-text">更多</view>
+        <view class="btn-box">
+          <view>延长收货</view>
+          <view>查看物流</view>
+          <view id="btn-1">查看详情</view>
+        </view>
       </view>
     </view>
-    <view class="allprice">
-      <view class="allprice-price">总价￥{{(fromList[index].money)}} </view>
-
-      <view>实付款￥{{fromList[index].money}} </view>
-    </view>
-  </view>
-  <!-- <view wx:if="{{fromList == ''}}">
+    <!-- <view wx:if="{{fromList == ''}}">
       <view class="nonefrom-img">
         <view class="iconfont icon-17 nonefrom-img1"></view>
       </view>
       <view class="nofrom-tis">您没有相关订单</view>
     </view> -->
-</view>
+  </view>
 </view>

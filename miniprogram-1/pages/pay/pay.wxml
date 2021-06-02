@@ -1,27 +1,36 @@
 <!--pages/pay/pay.wxml-->
 <view class="contain">
   <view class="tip-size">
-    <view>
-      <view class="size-img">
-        <view class="iconfont icon-dizhi1 dizhi"></view>
-      </view>
-      <view class="size-text">手动添加地址</view>
+    <view class="size-text"> 
+      <view>成都市武侯区桂溪街道</view>
+      <view class="mid-text">成都高新孵化园D座</view>
+      <view>荣健淇 138****1526</view>
     </view>
+    <view class="iconfont icon-jiantou"></view>
   </view>
   <view class="box1">
   <view class="box1-items" wx:for="{{carlist}}" wx:for-index="index" wx:key="index" data-index="{{index}}">
     <view class="box1-img">
       <image src="{{carlist[index].img1}}" alt="" />
     </view>
-    <view class="box1-center">
-      <view class="name-1">{{carlist[index].titlename}}</view>
-      <view class="sku-box">
-        <view class="sku" wx:for="{{carlist[index].typeArray}}" wx:for-index="index" wx:key="index" data-index="{{index}}" >{{item.typetext}}</view>
-      </view>
+    <!-- <view class="box1-center">
+      
     </view>
     <view class="box1-right">
-      <view class="box1-right-price">￥{{carlist[index].nowprice}}</view>
+    </view> -->
+    <view class="rigth">
+      <view class="right-box1">
+        <view class="name-1">这是全天下最好的{{carlist[index].titlename}}</view>
+        <view>￥{{carlist[index].nowprice}}</view>
+      </view>
+      <view class="right-box1">
+        <view class="sku-box">
+        <view class="sku">这是类型：</view>
+         <view class="sku" wx:for="{{carlist[index].typeArray}}" wx:for-index="index" wx:key="index" data-index="{{index}}" >{{item.typetext}}</view>
+        </view>
       <view class="box1-right-num">x{{carlist[index].prtnum}}</view>
+
+      </view>
     </view>
   </view>
     

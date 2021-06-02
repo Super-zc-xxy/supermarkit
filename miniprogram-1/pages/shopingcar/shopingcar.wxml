@@ -21,9 +21,9 @@
       </view>
       <image src="{{carlist[index].img1}}" class="item-img"></image>
       <view class="fullCar-contain-rightbox">
-        <view class="items-name">{{carlist[index].titlename}}</view>
+        <view class="items-name">这就是最新的做最好的{{carlist[index].titlename}} {{carlist[index].typeArray[0].typetext}} <text> {{carlist[index].typeArray[1].typetext}}</text></view>
         <view class="outbox-items-type">
-          <view class="items-type" bindtap="typebox" data-index="{{index}}">{{carlist[index].typeArray[0].typetext}}
+          <view class="items-type" bindtap="typebox" data-index="{{index}}">关于这个商品：{{carlist[index].typeArray[0].typetext}}{{carlist[index].typeArray[1].typetext}}
             <view class="iconfont icon-xialajiantou"></view>
           </view>
         </view>
@@ -95,7 +95,8 @@
             <text class="type-text1">￥{{nowprice}}</text>
           </view>
         </view>
-        <view class="type-text3"> {{prtName}} {{style}}</view>
+        <view class="type-text3">这就是最好的 {{prtName}}</view>
+        <view class="type-text3"> {{prtName}} {{style}} {{xpshopx[1].typetext}}</view>
       </view>
     </view>
     <view class="btn-outbox-1" wx:for="{{xpshopx}}" wx:for-index="index" wx:key="index">

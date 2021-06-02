@@ -170,3 +170,6 @@
   align-items: center;
   font-size: 30rpx;
 }
+.icon-jiantou{
+  font-size: 20rpx;
+}

@@ -102,15 +102,18 @@
   background-color: #999;
 }
 .waitpay-items{
+  overflow: hidden;
+  position: relative;
+}
+.outbox-1{
   width: 94%;
   margin: auto;
   background-color: #fff;
   border-radius: 20rpx;
   overflow: hidden;
   position: relative;
-  padding-bottom: 60rpx;
+  padding-bottom: 30rpx;
   margin-top: 30rpx;
-  margin-bottom: 30rpx;
 }
 .waitpay-items-box1{
   display: flex;
@@ -148,10 +151,16 @@
 }
 .allprice{
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   font-size: 30rpx;
-  position: absolute;
-  right: 20rpx;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+}
+.pricee-box2{
+  padding-left: 30rpx;
+}
+.allprice>view{
+  margin-left: 20rpx;
 }
 .allprice-price{
   color: #999;
@@ -167,4 +176,49 @@
 }
 .nowtime{
   color: #999;
+}
+.pricebox{
+  width: 100%;
+}
+.pricebox-box1{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.pricebox-box2{
+  display: flex;
+  margin-bottom: 5rpx;
+}
+.pricebox-box2>view{
+  border: 1rpx solid #FF681D;
+  color: #FF681D;
+  font-size: 18rpx;
+  margin-right: 20rpx;
+}
+.bottom-box{
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.bottom-box-text{
+  color: #999;
+  margin-left: 20rpx;
+}
+.btn-box>view{
+  border: 1rpx solid rgb(192, 178, 178);
+  color: rgb(27, 23, 23);
+  padding: 10rpx 18rpx;
+  border-radius: 40rpx;
+  margin: 0rpx 10rpx;
+}
+.btn-box{
+  display: flex;
+}
+#btn-1{
+  border: 1rpx solid #FF681D;
+  color: #FF681D;
+}
+#text{
+  margin-right: 20rpx;
 }

@@ -54,7 +54,7 @@
           <view class="top-3rd-view">
             <view class="top-3rd-text-box">
               <text class="top-3rd-text1">会员中心</text>
-              <view class="top-3rd-text2">新权益></view>
+              <view class="top-3rd-text2">新权益<text class="iconfont icon-jiantou"></text></view>
             </view>
             <view class="top-3rd-imgbox">
               
@@ -63,7 +63,7 @@
           <view class="top-3rd-view">
             <view class="top-3rd-text-box">
               <text class="top-3rd-text1">米金商城</text>
-              <view class="top-3rd-text2">限量神劵></view>
+              <view class="top-3rd-text2">限量神劵<text class="iconfont icon-jiantou"></text></view>
             </view>
             <view class="top-3rd-imgbox">
             </view>
@@ -71,7 +71,7 @@
           <view class="top-3rd-view">
             <view class="top-3rd-text-box">
               <text class="top-3rd-text1">链接设备</text>
-              <view class="top-3rd-text2">领取米金></view>
+              <view class="top-3rd-text2">领取米金<text class="iconfont icon-jiantou"></text></view>
             </view>
             <view class="top-3rd-imgbox">
             </view>

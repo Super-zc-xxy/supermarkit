@@ -254,6 +254,8 @@ Page({
     }
     if (jdge == false) {
       app.data.shopcarlist.push(this.data.itemArray)
+      console.log(app.data.shopcarlist,1);
+      // app.data.shopcar_r.push(this.data.itemArray)
       this.setData({
         shopcarnum: this.data.itemArray.prtnum,
       })
@@ -272,6 +274,9 @@ Page({
         }
         if (jdg == false) {
           req.req('shoppingCarAddModify', function (res) {
+            req.req('shoppingCarList', function (res) {
+              app.data.shopcar_r = res.data
+            }, {token: app.data.token})
           }, shopcaritem)
         }
       }
@@ -279,19 +284,10 @@ Page({
     }, {
       token: app.data.token
     })
-
-
   },
   buynow() {
-    app.data.payjdg = true;
-    var sendlist = [];
-    sendlist.push(this.data.itemArray)
-    wx.navigateTo({
-      url: `../pay/pay?mid=3&list=${JSON.stringify(sendlist)}`
-    })
-    this.setData({
-      shopbuystate: false
-    })
+    this.addshopcar();
+    this.toshopcar();
   },
   type_change(e) {
     var idx = e.currentTarget.dataset.index;

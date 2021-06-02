@@ -106,7 +106,8 @@ Page({
       }
     }
     // 生成订单
-
+    console.log(app.data.shopcar_r,222);
+    console.log(this.data.carlist,132123);
     req.req('generateOrder',function(res){
         wx.requestPayment({
           nonceStr: res.nonce_str,

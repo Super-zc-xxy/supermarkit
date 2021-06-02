@@ -51,7 +51,6 @@ Page({
     })
     this.atbegin(false, 'checked');
     this.allNums();
-
   },
 
   /**
@@ -392,5 +391,5 @@ Page({
     wx.switchTab({
       url: `../mine/mine`,
     })
-  }
+  },
 })
